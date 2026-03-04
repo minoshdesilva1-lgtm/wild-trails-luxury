@@ -1,12 +1,35 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Navbar from '@/components/Navbar';
+import HeroSection from '@/components/HeroSection';
+import WelcomeSection from '@/components/WelcomeSection';
+import PropertyImages from '@/components/PropertyImages';
+import BrandStory from '@/components/BrandStory';
+import FacilitiesSection from '@/components/FacilitiesSection';
+import RoomCarousel from '@/components/RoomCarousel';
+import FeaturesRow from '@/components/FeaturesRow';
+import LuxuryComfort from '@/components/LuxuryComfort';
+import SpaSection from '@/components/SpaSection';
+import ExperiencesSection from '@/components/ExperiencesSection';
+import ReviewsSection from '@/components/ReviewsSection';
+import Footer from '@/components/Footer';
+import FloatingUI from '@/components/FloatingUI';
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen">
+      <Navbar />
+      <HeroSection />
+      <WelcomeSection />
+      <PropertyImages />
+      <BrandStory />
+      <FacilitiesSection />
+      <RoomCarousel />
+      <FeaturesRow />
+      <LuxuryComfort />
+      <SpaSection />
+      <ExperiencesSection />
+      <ReviewsSection />
+      <Footer />
+      <FloatingUI />
     </div>
   );
 };
