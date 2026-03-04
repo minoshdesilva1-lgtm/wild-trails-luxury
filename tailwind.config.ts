@@ -47,16 +47,24 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
-        },
+        forest: "hsl(var(--forest))",
+        "dark-teal": "hsl(var(--dark-teal))",
+        cream: "hsl(var(--cream))",
+        "near-black": "hsl(var(--near-black))",
+        gold: "hsl(var(--gold))",
+        "warm-tan": "hsl(var(--warm-tan))",
+        "light-gray": "hsl(var(--light-gray))",
+        "footer-dark": "hsl(var(--footer-dark))",
+        "footer-bottom": "hsl(var(--footer-bottom))",
+        "chat-green": "hsl(var(--chat-green))",
+        "tripadvisor": "hsl(var(--tripadvisor))",
+      },
+      fontFamily: {
+        display: ['Playfair Display', 'serif'],
+        logo: ['Cinzel Decorative', 'serif'],
+        body: ['Cormorant Garamond', 'serif'],
+        'sans-brand': ['Montserrat', 'sans-serif'],
+        script: ['Great Vibes', 'cursive'],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -65,20 +73,12 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
       animation: {
