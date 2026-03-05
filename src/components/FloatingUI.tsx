@@ -13,13 +13,13 @@ const FloatingUI = () => {
   return (
     <>
       {/* Contact chat bubble */}
-      <div className="fixed bottom-6 right-6 z-50 group">
-        <button className="w-14 h-14 rounded-full bg-chat-green text-card flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
-          <MessageCircle size={24} />
-        </button>
-        <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-card text-near-black font-sans-brand text-[12px] px-3 py-1.5 shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-          Contact us
-        </span>
+      <div className="fixed bottom-6 right-6 z-50 flex items-center gap-2 pointer-events-none">
+        <div className="bg-white text-near-black font-sans-brand text-[13px] font-medium px-5 py-2.5 shadow-[0_4px_20px_rgba(0,0,0,0.15)] flex items-center gap-3 pointer-events-auto cursor-pointer hover:bg-cream/50 transition-colors group">
+          <span>Contact us</span>
+          <div className="w-8 h-8 rounded-full bg-chat-green text-card flex items-center justify-center group-hover:scale-110 transition-transform">
+            <MessageCircle size={16} fill="currentColor" />
+          </div>
+        </div>
       </div>
 
       {/* Scroll to top */}
