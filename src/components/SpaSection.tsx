@@ -1,5 +1,5 @@
 import { Check } from 'lucide-react';
-import leopardImg from '@/assets/leopard-tree.jpg';
+import spaImg from '@/assets/gallery-1.jpg';
 
 const spaServices = [
   'Massage Therapies',
@@ -15,8 +15,8 @@ const SpaSection = () => {
     <section id="spa" className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
       <div className="h-[400px] lg:h-auto overflow-hidden">
         <img
-          src={leopardImg}
-          alt="Sri Lankan leopard resting on a tree"
+          src={spaImg}
+          alt="Outdoor spa with plunge pool"
           className="w-full h-full object-cover"
           loading="lazy"
         />

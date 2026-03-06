@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import tentInterior from '@/assets/tent-interior.jpg';
-import tentExterior from '@/assets/tent-exterior.jpg';
+import gallery4 from '@/assets/gallery-4.jpg';
+import gallery3 from '@/assets/gallery-3.jpg';
 
 const rooms = [
   {
-    image: tentInterior,
+    image: gallery4,
     type: 'STANDARD ROOM',
     price: '$50',
     description: 'Recently refurbished in an individual and elegant style, enjoy the comfort of a luxurious Corrib Room. Upgrade to an immaculate Corrib Lake View.',
@@ -14,7 +14,7 @@ const rooms = [
     service: 'Free Breakfast, Free Wifi, Free Water',
   },
   {
-    image: tentExterior,
+    image: gallery3,
     type: 'PREMIUM TENT',
     price: '$95',
     description: 'Experience the ultimate safari luxury with a private plunge pool, expansive wooden deck, and panoramic views of the surrounding wilderness.',

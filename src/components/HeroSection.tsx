@@ -1,4 +1,4 @@
-import heroImg from '@/assets/hero-jungle.jpg';
+import heroImg from '@/assets/gallery-3.jpg';
 import { Image as ImageIcon } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 

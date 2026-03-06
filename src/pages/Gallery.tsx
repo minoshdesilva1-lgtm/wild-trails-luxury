@@ -13,14 +13,12 @@ const Gallery = () => {
     }, []);
 
     const images = [
-        { src: '/src/assets/hero-jungle.jpg', alt: 'Jungle Landscape' },
-        { src: '/src/assets/tent-exterior.jpg', alt: 'Luxury Tent Exterior' },
-        { src: '/src/assets/tent-interior.jpg', alt: 'Luxury Tent Interior' },
-        { src: '/src/assets/leopard-tree.jpg', alt: 'Leopard Resting on a Tree' },
+        { src: '/src/assets/gallery-3.jpg', alt: 'Luxury Tent Sanctuary' },
+        { src: '/src/assets/gallery-1.jpg', alt: 'Private Plunge Pool View' },
+        { src: '/src/assets/gallery-4.jpg', alt: 'Spacious Tent Interior' },
+        { src: '/src/assets/gallery-2.jpg', alt: 'Eco-Luxury Exterior' },
+        { src: '/src/assets/leopard-tree.jpg', alt: 'Yala Leopard' },
         { src: '/src/assets/yala-leopard.jpg', alt: 'Wild Leopard of Yala' },
-        { src: '/src/assets/spa-lifestyle.jpg', alt: 'Spa and Wellness' },
-        { src: '/src/assets/kirinda-beach.jpg', alt: 'Kirinda Beach View' },
-        { src: '/src/assets/kataragama-temple.jpg', alt: 'Kataragama Temple' },
     ];
 
     return (

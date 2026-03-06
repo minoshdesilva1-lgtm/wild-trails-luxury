@@ -1,20 +1,20 @@
-import tentInterior from '@/assets/tent-interior.jpg';
-import tentExterior from '@/assets/tent-exterior.jpg';
+import gallery4 from '@/assets/gallery-4.jpg';
+import gallery3 from '@/assets/gallery-3.jpg';
 
 const PropertyImages = () => {
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 w-full">
       <div className="h-[400px] md:h-[600px] overflow-hidden">
         <img
-          src={tentInterior}
-          alt="Luxury tent interior with king bed and warm lighting"
+          src={gallery4}
+          alt="Luxury tent interior"
           className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
           loading="lazy"
         />
       </div>
       <div className="h-[400px] md:h-[600px] overflow-hidden">
         <img
-          src={tentExterior}
+          src={gallery3}
           alt="Exterior tent deck with private plunge pool"
           className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
           loading="lazy"

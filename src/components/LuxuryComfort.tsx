@@ -1,12 +1,12 @@
-import spaImg from '@/assets/spa-lifestyle.jpg';
+import luxuryImg from '@/assets/gallery-2.jpg';
 
 const LuxuryComfort = () => {
   return (
     <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
       <div className="h-[400px] lg:h-auto overflow-hidden">
         <img
-          src={spaImg}
-          alt="Woman relaxing by tropical indoor pool"
+          src={luxuryImg}
+          alt="Eco-luxury tent sanctuary"
           className="w-full h-full object-cover"
           loading="lazy"
         />
