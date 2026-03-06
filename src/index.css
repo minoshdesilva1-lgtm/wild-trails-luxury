@@ -151,3 +151,8 @@ html {
   pointer-events: none;
   z-index: 1;
 }
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+}
