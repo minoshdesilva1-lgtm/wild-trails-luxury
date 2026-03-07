@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, Phone, Globe, ChevronDown, X } from 'lucide-react';
+import logoDark from '@/assets/wild-trails-logo-dark.png';
+import logoLight from '@/assets/wild-trails-logo-light.png';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
