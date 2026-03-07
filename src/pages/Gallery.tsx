@@ -47,18 +47,9 @@ const Gallery = () => {
             : allImages.filter(img => img.category === activeFilter);
     }, [activeFilter, allImages]);
 
-    // Helper to determine masonry spans based on index
-    const getMasonryClass = (index: number) => {
-        const patternIndex = index % 6; // Pattern of 6 images
-        switch (patternIndex) {
-            case 0: return 'md:col-span-2 md:row-span-1 aspect-[16/9] md:aspect-auto'; // Large wide
-            case 1: return 'md:col-span-1 md:row-span-2 aspect-[4/5] md:aspect-auto'; // Tall portrait
-            case 2: return 'md:col-span-1 md:row-span-1 aspect-square'; // Square
-            case 3: return 'md:col-span-1 md:row-span-1 aspect-square'; // Square
-            case 4: return 'md:col-span-1 md:row-span-1 aspect-square'; // Square
-            case 5: return 'md:col-span-2 md:row-span-1 aspect-[16/9] md:aspect-auto'; // Wide landscape
-            default: return 'md:col-span-1 md:row-span-1 aspect-square';
-        }
+    // Help determine uniform image size
+    const getMasonryClass = () => {
+        return 'aspect-[4/5]';
     };
 
     return (
@@ -74,7 +65,7 @@ const Gallery = () => {
                                 <div className="w-16 h-[1px] bg-gold" />
                                 <span className="font-sans-brand text-[10px] uppercase tracking-[0.4em] text-gold font-semibold">Visual Journey</span>
                             </div>
-                            <h1 className="font-display text-6xl md:text-8xl text-near-black leading-tight italic lowercase">Gallery.</h1>
+                            <h1 className="font-display text-6xl md:text-8xl text-near-black leading-tight italic">Gallery</h1>
                         </div>
                         <button
                             onClick={() => navigate('/')}
@@ -111,7 +102,7 @@ const Gallery = () => {
                 </header>
 
                 {/* Gallery Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 auto-rows-[300px]">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
                     {filteredImages.map((img, index) => (
                         <div key={`${activeFilter}-${img.id}`} className="contents">
                             {/* Mid-Gallery CTA Break */}
@@ -131,7 +122,7 @@ const Gallery = () => {
                             )}
 
                             <div
-                                className={`group relative overflow-hidden bg-forest/5 cursor-pointer transition-all duration-1000 transform ${getMasonryClass(index)} animate-in fade-in slide-in-from-bottom-8 fill-mode-forwards`}
+                                className={`group relative overflow-hidden bg-forest/5 cursor-pointer transition-all duration-1000 transform ${getMasonryClass()} animate-in fade-in slide-in-from-bottom-8 fill-mode-forwards`}
                                 style={{ animationDelay: `${(index % 6) * 150}ms`, animationDuration: '1000ms' }}
                             >
                                 <img
