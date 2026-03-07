@@ -1,0 +1,122 @@
+import { useState } from 'react';
+import { ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import FloatingUI from '@/components/FloatingUI';
+
+import tentInterior from '@/assets/tent-interior.jpg';
+import tentExterior from '@/assets/tent-exterior.jpg';
+import spaLifestyle from '@/assets/spa-lifestyle.jpg';
+import leopardTree from '@/assets/leopard-tree.jpg';
+import yalaLeopard from '@/assets/yala-leopard.jpg';
+import kirindaBeach from '@/assets/kirinda-beach.jpg';
+import kataragamaTemple from '@/assets/kataragama-temple.jpg';
+import heroJungle from '@/assets/hero-jungle.jpg';
+
+type Category = 'ALL' | 'THE TENTS' | 'SUNDOWNER LOUNGE' | 'BUSH DINING' | 'IN THE WILD';
+
+const galleryItems = [
+  { src: tentExterior, alt: 'Tent deck with private plunge pool', category: 'THE TENTS' as const, label: 'PRIVATE DECK VIEW' },
+  { src: tentInterior, alt: 'Luxury tent interior', category: 'THE TENTS' as const, label: 'LUXURY TENT INTERIOR' },
+  { src: leopardTree, alt: 'Private plunge pool surrounded by greenery', category: 'THE TENTS' as const, label: 'PRIVATE PLUNGE POOL VIEW' },
+  { src: spaLifestyle, alt: 'Sundowner lounge at dusk', category: 'SUNDOWNER LOUNGE' as const, label: 'SUNDOWNER LOUNGE' },
+  { src: heroJungle, alt: 'Bush dining experience', category: 'BUSH DINING' as const, label: 'BUSH DINING SETUP' },
+  { src: kirindaBeach, alt: 'Kirinda beach coastline', category: 'IN THE WILD' as const, label: 'KIRINDA COASTLINE' },
+  { src: yalaLeopard, alt: 'Leopard in Yala National Park', category: 'IN THE WILD' as const, label: 'YALA LEOPARD' },
+  { src: kataragamaTemple, alt: 'Kataragama ancient temple', category: 'IN THE WILD' as const, label: 'KATARAGAMA TEMPLE' },
+];
+
+const categories: Category[] = ['ALL', 'THE TENTS', 'SUNDOWNER LOUNGE', 'BUSH DINING', 'IN THE WILD'];
+
+const Gallery = () => {
+  const [active, setActive] = useState<Category>('ALL');
+
+  const filtered = active === 'ALL' ? galleryItems : galleryItems.filter(i => i.category === active);
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Navbar />
+
+      {/* Header */}
+      <section className="pt-32 pb-8 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
+          <div>
+            {/* Label */}
+            <div className="flex items-center gap-4 mb-6">
+              <span className="w-10 h-px bg-gold" />
+              <span className="label-small">Visual Journey</span>
+            </div>
+
+            {/* Title */}
+            <h1 className="font-display text-6xl md:text-8xl text-near-black italic mb-8">
+              Gallery
+            </h1>
+
+            {/* Description */}
+            <p className="font-body text-lg md:text-xl text-muted-foreground italic max-w-xl leading-relaxed">
+              Experience the untamed beauty of Sri Lanka's wilderness through our curated collection of moments, from the luxury of our tents to the majestic grace of Yala's wildlife.
+            </p>
+          </div>
+
+          {/* Back link */}
+          <Link
+            to="/"
+            className="flex items-center gap-3 font-sans-brand text-[12px] uppercase tracking-[0.15em] text-near-black hover:text-gold transition-colors mt-4 md:mt-8 shrink-0"
+          >
+            <ArrowLeft size={16} />
+            Back to Sanctuary
+          </Link>
+        </div>
+      </section>
+
+      {/* Category Tabs */}
+      <section className="px-6 md:px-12 lg:px-20 max-w-7xl mx-auto py-8 border-b border-border">
+        <div className="flex flex-wrap gap-6 md:gap-10">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActive(cat)}
+              className={`font-sans-brand text-[12px] uppercase tracking-[0.15em] pb-2 transition-all duration-300 ${
+                active === cat
+                  ? 'text-near-black border-b-2 border-near-black font-semibold'
+                  : 'text-muted-foreground hover:text-near-black'
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+      </section>
+
+      {/* Gallery Grid */}
+      <section className="px-6 md:px-12 lg:px-20 max-w-7xl mx-auto py-12 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {filtered.map((item, i) => (
+            <div
+              key={`${item.alt}-${i}`}
+              className="relative h-[350px] md:h-[420px] overflow-hidden group cursor-pointer"
+            >
+              <img
+                src={item.src}
+                alt={item.alt}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-near-black/0 group-hover:bg-near-black/40 transition-colors duration-500 flex items-center justify-center">
+                <span className="font-sans-brand text-[12px] uppercase tracking-[0.2em] text-card opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  {item.label}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <Footer />
+      <FloatingUI />
+    </div>
+  );
+};
+
+export default Gallery;
