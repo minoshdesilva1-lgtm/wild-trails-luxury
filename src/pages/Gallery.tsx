@@ -17,8 +17,8 @@ const Gallery = () => {
         { src: '/src/assets/gallery-1.jpg', alt: 'Private Plunge Pool View' },
         { src: '/src/assets/gallery-4.jpg', alt: 'Spacious Tent Interior' },
         { src: '/src/assets/gallery-2.jpg', alt: 'Eco-Luxury Exterior' },
-        { src: '/src/assets/leopard-tree.jpg', alt: 'Yala Leopard' },
-        { src: '/src/assets/yala-leopard.jpg', alt: 'Wild Leopard of Yala' },
+        { src: '/src/assets/gallery-5.jpg', alt: 'Dinner Under the Stars' },
+        { src: '/src/assets/gallery-6.jpg', alt: 'Twilight Rock Dining' },
     ];
 
     return (
