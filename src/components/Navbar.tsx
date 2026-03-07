@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, Phone, Globe, ChevronDown, X } from 'lucide-react';
+import logoDark from '@/assets/wild-trails-logo-dark.png';
+import logoLight from '@/assets/wild-trails-logo-light.png';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -36,16 +38,11 @@ const Navbar = () => {
 
         {/* Center Logo */}
         <div className="text-center">
-          <div className={`font-logo text-xl md:text-2xl tracking-[0.1em] ${
-            scrolled ? 'text-near-black' : 'text-card'
-          }`}>
-            WILD TRAILS
-          </div>
-          <div className={`font-sans-brand text-[10px] tracking-[0.25em] uppercase ${
-            scrolled ? 'text-muted-foreground' : 'text-card/80'
-          }`}>
-            YALA BY MILI
-          </div>
+          <img 
+            src={scrolled ? logoDark : logoLight} 
+            alt="Wild Trails Yala by Mili" 
+            className="h-10 md:h-14 w-auto transition-all duration-500"
+          />
         </div>
 
         {/* Right */}
