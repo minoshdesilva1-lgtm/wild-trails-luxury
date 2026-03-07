@@ -46,7 +46,7 @@ const Navbar = () => {
           <img 
             src={logo} 
             alt="Wild Trails Yala by Mili" 
-            className="h-20 md:h-28 w-auto object-contain transition-all duration-500"
+            className="h-20 md:h-36 w-auto object-contain transition-all duration-500"
             style={{ filter: logoNeedsInvert ? 'invert(1) brightness(10)' : 'none' }}
           />
         </div>
