@@ -1,4 +1,5 @@
 import { Facebook, Instagram, MapPin } from 'lucide-react';
+import logo from '@/assets/logo.png';
 
 const Footer = () => {
   return (
@@ -13,13 +14,13 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Logo + Social */}
           <div className="space-y-6">
-            <div>
-              <div className="font-logo text-3xl text-card tracking-[0.05em] leading-tight mb-1">
-                WILD TRAILS
-              </div>
-              <div className="font-sans-brand text-[11px] tracking-[0.3em] text-card/70 uppercase">
-                YALA BY MILI
-              </div>
+            <div className="flex flex-col items-start">
+              <img 
+                src={logo} 
+                alt="Wild Trails Yala by Mili" 
+                className="h-14 md:h-16 w-auto object-contain"
+                style={{ filter: 'invert(1) brightness(2)' }}
+              />
             </div>
 
             <div className="flex gap-4">

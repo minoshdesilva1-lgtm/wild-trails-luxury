@@ -2,6 +2,8 @@ import heroImg from '@/assets/gallery-3.jpg';
 import { Image as ImageIcon } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
+import logo from '@/assets/logo.png';
+
 const HeroSection = () => {
   const navigate = useNavigate();
 
@@ -14,7 +16,14 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
-        <div className="animate-fade-in-up">
+        <div className="animate-fade-in-up flex flex-col items-center">
+          <img 
+            src={logo} 
+            alt="Wild Trails Yala by Mili" 
+            className="h-20 md:h-32 w-auto mb-10 object-contain"
+            style={{ filter: 'invert(1) brightness(2)' }}
+          />
+          
           <p className="font-sans-brand uppercase tracking-[0.3em] text-[10px] md:text-[12px] text-gold mb-8 flex items-center gap-4 justify-center">
             <span className="w-8 h-[1px] bg-gold/50" />
             WAKE TO THE RHYTHM OF THE WILD

@@ -1,9 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Menu, Phone, Globe, ChevronDown, X } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
+import logo from '@/assets/logo.png';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 80);
@@ -11,23 +15,26 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Logo should be white when: on home page AND not yet scrolled (dark hero visible)
+  const logoNeedsInvert = isHome && !scrolled;
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       scrolled ? 'bg-card shadow-md' : 'bg-transparent'
     }`}>
-      <div className="flex items-center justify-between px-4 md:px-8 py-4">
+      <div className="flex items-center justify-between px-4 md:px-8 py-3">
         {/* Left */}
         <div className="flex items-center gap-4">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className={`w-10 h-10 flex items-center justify-center border transition-colors ${
-              scrolled ? 'border-near-black/20 text-near-black' : 'border-white/30 text-card'
+              scrolled || !isHome ? 'border-near-black/20 text-near-black' : 'border-white/30 text-card'
             }`}
           >
             {menuOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
           <a href="tel:+94757287077" className={`hidden md:flex items-center gap-2 font-sans-brand text-[12px] uppercase tracking-[0.1em] ${
-            scrolled ? 'text-near-black' : 'text-card'
+            scrolled || !isHome ? 'text-near-black' : 'text-card'
           }`}>
             <Phone size={14} />
             Reservation: +94 75 728 7077
@@ -35,23 +42,19 @@ const Navbar = () => {
         </div>
 
         {/* Center Logo */}
-        <div className="text-center">
-          <div className={`font-logo text-xl md:text-2xl tracking-[0.1em] ${
-            scrolled ? 'text-near-black' : 'text-card'
-          }`}>
-            WILD TRAILS
-          </div>
-          <div className={`font-sans-brand text-[10px] tracking-[0.25em] uppercase ${
-            scrolled ? 'text-muted-foreground' : 'text-card/80'
-          }`}>
-            YALA BY MILI
-          </div>
+        <div className="flex flex-col items-center">
+          <img 
+            src={logo} 
+            alt="Wild Trails Yala by Mili" 
+            className="h-12 md:h-16 w-auto object-contain transition-all duration-500"
+            style={{ filter: logoNeedsInvert ? 'invert(1) brightness(10)' : 'none' }}
+          />
         </div>
 
         {/* Right */}
         <div className="flex items-center gap-3 md:gap-5">
           <div className={`hidden md:flex items-center gap-1 font-sans-brand text-[12px] ${
-            scrolled ? 'text-near-black' : 'text-card'
+            scrolled || !isHome ? 'text-near-black' : 'text-card'
           }`}>
             <Globe size={14} />
             English
