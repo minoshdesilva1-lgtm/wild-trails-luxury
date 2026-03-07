@@ -37,7 +37,7 @@ const WelcomeSection = () => {
           <p className="font-body text-lg md:text-xl leading-[1.9] text-near-black/70 mb-8">
             Founded in 2007, Wild Trails by Mili brings luxury glamping to Yala, Sri Lanka. Inspired by my photography journeys, we created an eco-luxury safari camp where comfort meets the wild. Every stay is more than a getaway – it's an authentic Yala experience in style and comfort.
           </p>
-          <img src={miliSignature} alt="Mili signature" className="h-16 mx-auto mb-2" />
+          <img src={miliSignature} alt="Mili signature" className="h-12 mx-auto mb-2 opacity-70" />
           <p className="font-sans-brand text-[13px] text-muted-foreground tracking-wide">
             Milinda De Silva – <em>Founder</em>
           </p>
