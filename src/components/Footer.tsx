@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Facebook, Instagram, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const quickLinks = [
   { label: 'Home', href: '/', isRoute: true },
@@ -13,6 +14,11 @@ const quickLinks = [
 
 const Footer = () => {
   const [email, setEmail] = useState('');
+  const col1 = useScrollReveal({ threshold: 0.1 });
+  const col2 = useScrollReveal({ threshold: 0.1 });
+  const col3 = useScrollReveal({ threshold: 0.1 });
+  const col4 = useScrollReveal({ threshold: 0.1 });
+  const labelReveal = useScrollReveal({ threshold: 0.2 });
 
   return (
     <footer id="contact" className="bg-forest text-cream/90">
@@ -24,7 +30,10 @@ const Footer = () => {
       <div className="py-20 md:py-24 px-6 md:px-12 lg:px-20">
         <div className="max-w-7xl mx-auto">
           {/* Small label */}
-          <div className="text-center mb-14">
+          <div
+            ref={labelReveal.ref}
+            className={`text-center mb-14 transition-all duration-700 ${labelReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+          >
             <span className="font-sans-brand text-[11px] tracking-[0.25em] uppercase text-gold">
               — Wild Trails —
             </span>
@@ -32,7 +41,10 @@ const Footer = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-10">
             {/* Brand Column */}
-            <div>
+            <div
+              ref={col1.ref}
+              className={`transition-all duration-700 ${col1.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
               <div className="font-logo text-xl text-cream tracking-[0.1em] mb-1">
                 WILD TRAILS
               </div>
@@ -60,7 +72,10 @@ const Footer = () => {
             </div>
 
             {/* Quick Links */}
-            <div>
+            <div
+              ref={col2.ref}
+              className={`transition-all duration-700 delay-150 ${col2.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
               <h4 className="font-display text-xl text-cream mb-6 tracking-wide">
                 Quick Links
               </h4>
@@ -90,7 +105,10 @@ const Footer = () => {
             </div>
 
             {/* Contact */}
-            <div>
+            <div
+              ref={col3.ref}
+              className={`transition-all duration-700 delay-300 ${col3.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
               <h4 className="font-display text-xl text-cream mb-6 tracking-wide">
                 Contact
               </h4>
@@ -127,7 +145,10 @@ const Footer = () => {
             </div>
 
             {/* Newsletter / CTA */}
-            <div>
+            <div
+              ref={col4.ref}
+              className={`transition-all duration-700 delay-[450ms] ${col4.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
               <h4 className="font-display text-xl text-cream mb-6 tracking-wide">
                 Stay in the Wild
               </h4>
