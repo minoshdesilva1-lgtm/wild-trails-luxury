@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Facebook, Instagram, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const quickLinks = [
   { label: 'Home', href: '/', isRoute: true },
