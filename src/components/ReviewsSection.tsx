@@ -28,6 +28,7 @@ const reviews = [
     rating: 5,
     title: 'Such an amazing experience!',
     text: 'It was amazing! Such a lovely place and lovely people :) location is amazing and the food was good. The tent has everything you need.',
+    avatar: beatriceAvatar as string | undefined,
   },
   {
     name: 'Sander B',
