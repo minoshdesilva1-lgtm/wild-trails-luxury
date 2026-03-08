@@ -17,11 +17,12 @@ import bushDining2 from '@/assets/bush-dining-2.jpg';
 import bushDining3 from '@/assets/bush-dining-3.jpg';
 import bushDining4 from '@/assets/bush-dining-4.jpg';
 import tentPoolFoliage from '@/assets/tent-pool-foliage.jpg';
+import tentPoolDeck from '@/assets/tent-pool-deck.jpg';
 
 type Category = 'THE TENTS' | 'SUNDOWNER LOUNGE' | 'BUSH DINING' | 'IN THE WILD';
 
 const galleryItems = [
-  
+  { src: tentPoolDeck, alt: 'Tent deck with plunge pool surrounded by foliage', category: 'THE TENTS' as const, label: 'PRIVATE POOL & DECK' },
   { src: bushDining1, alt: 'Bush dining under the stars with campfire', category: 'BUSH DINING' as const, label: 'CAMPFIRE DINNER' },
   { src: bushDining2, alt: 'Gourmet meal by firelight with wine', category: 'BUSH DINING' as const, label: 'FIRESIDE CUISINE' },
   { src: bushDining3, alt: 'Lantern-lit jungle dining experience', category: 'BUSH DINING' as const, label: 'JUNGLE LANTERN DINING' },
