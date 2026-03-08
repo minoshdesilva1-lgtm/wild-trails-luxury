@@ -7,7 +7,7 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 import entranceImg from '@/assets/wild-trails-entrance.jpg';
 import tentExterior from '@/assets/tent-exterior.jpg';
 import bushDining1 from '@/assets/bush-dining-1.jpg';
-import heroJungle from '@/assets/hero-jungle.jpg';
+import rockDiningAerial from '@/assets/rock-dining-aerial.jpg';
 
 const contactCards = [
   {
