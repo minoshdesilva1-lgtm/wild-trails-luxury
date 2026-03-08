@@ -6,7 +6,7 @@ import BrandStory from '@/components/BrandStory';
 import FacilitiesSection from '@/components/FacilitiesSection';
 import RoomCarousel from '@/components/RoomCarousel';
 import FeaturesRow from '@/components/FeaturesRow';
-import LuxuryComfort from '@/components/LuxuryComfort';
+
 import ExperiencesSection from '@/components/ExperiencesSection';
 import ReviewsSection from '@/components/ReviewsSection';
 import Footer from '@/components/Footer';
