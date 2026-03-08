@@ -1,10 +1,21 @@
 import { useState, useEffect } from 'react';
-import { Menu, Phone, Globe, ChevronDown, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '@/assets/wild-trails-logo-clean.png';
+
+const navLinks = [
+  { label: 'HOME', href: '/', isRoute: true },
+  { label: 'ABOUT US', href: '#welcome', isRoute: false },
+  { label: 'EXCURSIONS', href: '#experiences', isRoute: false },
+  { label: 'RATES & INQUIRIES', href: '#rooms', isRoute: false },
+  { label: 'GALLERY', href: '/gallery', isRoute: true },
+  { label: 'CONTACT', href: '#contact', isRoute: false },
+];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 80);
@@ -12,71 +23,127 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavClick = (href: string, isRoute: boolean) => {
+    setMenuOpen(false);
+    if (!isRoute && href.startsWith('#')) {
+      if (location.pathname !== '/') {
+        window.location.href = '/' + href;
+      } else {
+        const el = document.querySelector(href);
+        el?.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
+  const textColor = scrolled ? 'text-near-black' : 'text-card';
+  const hoverColor = 'hover:text-gold';
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      scrolled ? 'bg-card shadow-md' : 'bg-transparent'
+      scrolled ? 'bg-card/95 backdrop-blur-sm shadow-md' : 'bg-black/20 backdrop-blur-[2px]'
     }`}>
-      <div className="flex items-center justify-between px-4 md:px-8 py-4">
-        {/* Left */}
-        <div className="flex items-center gap-4">
+      <div className="flex items-center justify-between px-4 md:px-8 py-3 max-w-[1400px] mx-auto">
+        {/* Left - Logo */}
+        <Link to="/" className="flex-shrink-0">
+          <img
+            src={logo}
+            alt="Wild Trails Yala by Mili"
+            className="h-11 md:h-14 w-auto transition-all duration-500"
+            style={{
+              filter: scrolled ? 'none' : 'brightness(0) invert(1)',
+            }}
+          />
+        </Link>
+
+        {/* Center - Nav Links (desktop) */}
+        <div className="hidden lg:flex items-center gap-8 xl:gap-10">
+          {navLinks.map((link) => {
+            const isActive =
+              (link.isRoute && location.pathname === link.href) ||
+              (!link.isRoute && location.pathname === '/' && false);
+
+            return link.isRoute ? (
+              <Link
+                key={link.label}
+                to={link.href}
+                className={`font-sans-brand text-[11px] xl:text-[12px] uppercase tracking-[0.15em] transition-all duration-300 relative group ${textColor} ${hoverColor} ${isActive ? 'font-semibold' : ''}`}
+              >
+                {link.label}
+                <span className={`absolute -bottom-1 left-1/2 -translate-x-1/2 h-[2px] rounded-full transition-all duration-300 ${
+                  isActive
+                    ? 'w-6 bg-gold'
+                    : 'w-0 group-hover:w-6 bg-gold'
+                }`} />
+              </Link>
+            ) : (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick(link.href, link.isRoute);
+                }}
+                className={`font-sans-brand text-[11px] xl:text-[12px] uppercase tracking-[0.15em] transition-all duration-300 relative group ${textColor} ${hoverColor}`}
+              >
+                {link.label}
+                <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-[2px] rounded-full bg-gold group-hover:w-6 transition-all duration-300" />
+              </a>
+            );
+          })}
+        </div>
+
+        {/* Right - CTA + Hamburger */}
+        <div className="flex items-center gap-3">
+          <a
+            href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick('#contact', false);
+            }}
+            className="hidden sm:inline-block font-sans-brand text-[11px] uppercase tracking-[0.12em] px-5 py-2.5 bg-gold/80 text-near-black hover:bg-gold transition-all duration-300"
+          >
+            INQUIRE NOW
+          </a>
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className={`w-10 h-10 flex items-center justify-center border transition-colors ${
+            className={`lg:hidden w-10 h-10 flex items-center justify-center border transition-all duration-300 ${
               scrolled ? 'border-near-black/20 text-near-black' : 'border-white/30 text-card'
             }`}
           >
             {menuOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
-          <a href="tel:+94757287077" className={`hidden md:flex items-center gap-2 font-sans-brand text-[12px] uppercase tracking-[0.1em] ${
-            scrolled ? 'text-near-black' : 'text-card'
-          }`}>
-            <Phone size={14} />
-            Reservation: +94 75 728 7077
-          </a>
-        </div>
-
-        {/* Center Logo */}
-        <div className="text-center">
-          <img 
-            src={logo}
-            alt="Wild Trails Yala by Mili" 
-            className="h-12 md:h-16 w-auto transition-all duration-500"
-            style={{
-              filter: scrolled ? 'none' : 'brightness(0) invert(1)',
-            }}
-          />
-        </div>
-
-        {/* Right */}
-        <div className="flex items-center gap-3 md:gap-5">
-          <div className={`hidden md:flex items-center gap-1 font-sans-brand text-[12px] ${
-            scrolled ? 'text-near-black' : 'text-card'
-          }`}>
-            <Globe size={14} />
-            English
-            <ChevronDown size={12} />
-          </div>
-          <a href="#contact" className="btn-dark text-[11px] px-4 py-2.5 md:px-6 md:py-3 hidden sm:inline-block">
-            INQUIRE NOW
-          </a>
         </div>
       </div>
 
-      {/* Mobile menu overlay */}
-      {menuOpen && (
-        <div className="absolute top-full left-0 right-0 bg-card shadow-lg py-8 px-6">
-          <div className="flex flex-col gap-4 font-sans-brand text-[13px] uppercase tracking-[0.15em] text-near-black">
-            <a href="#welcome" onClick={() => setMenuOpen(false)} className="hover:text-gold transition-colors">About</a>
-            <a href="#rooms" onClick={() => setMenuOpen(false)} className="hover:text-gold transition-colors">Our Rooms</a>
-            <a href="#experiences" onClick={() => setMenuOpen(false)} className="hover:text-gold transition-colors">Experiences</a>
-            <a href="#spa" onClick={() => setMenuOpen(false)} className="hover:text-gold transition-colors">Spa & Wellness</a>
-            <a href="#contact" onClick={() => setMenuOpen(false)} className="hover:text-gold transition-colors">Contact</a>
-            <a href="tel:+94757287077" className="flex items-center gap-2 text-gold md:hidden">
-              <Phone size={14} /> +94 75 728 7077
-            </a>
-          </div>
+      {/* Mobile menu */}
+      <div className={`lg:hidden overflow-hidden transition-all duration-500 ${menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+        <div className="bg-card shadow-lg py-6 px-6 flex flex-col gap-4 border-t border-border">
+          {navLinks.map((link) =>
+            link.isRoute ? (
+              <Link
+                key={link.label}
+                to={link.href}
+                onClick={() => setMenuOpen(false)}
+                className="font-sans-brand text-[13px] uppercase tracking-[0.15em] text-near-black hover:text-gold hover:translate-x-1 transition-all duration-300"
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick(link.href, link.isRoute);
+                }}
+                className="font-sans-brand text-[13px] uppercase tracking-[0.15em] text-near-black hover:text-gold hover:translate-x-1 transition-all duration-300"
+              >
+                {link.label}
+              </a>
+            )
+          )}
         </div>
-      )}
+      </div>
     </nav>
   );
 };
