@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingUI from '@/components/FloatingUI';
 import LazyImage from '@/components/LazyImage';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 import yalaImg from '@/assets/yala-leopard.jpg';
 import leopardTree from '@/assets/leopard-tree.jpg';
