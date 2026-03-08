@@ -43,6 +43,8 @@ const galleryItems = [
   { src: bushDining2, alt: 'Gourmet meal by firelight with wine', category: 'BUSH DINING' as const, label: 'FIRESIDE CUISINE' },
   { src: bushDining3, alt: 'Lantern-lit jungle dining experience', category: 'BUSH DINING' as const, label: 'JUNGLE LANTERN DINING' },
   { src: bushDining4, alt: 'Bush dining on rock with campfire at dusk', category: 'BUSH DINING' as const, label: 'ROCK-TOP BUSH DINING' },
+  { src: bushCampfireNight, alt: 'Campfire burning at night in the wilderness', category: 'BUSH DINING' as const, label: 'WILDERNESS CAMPFIRE' },
+  { src: bushCampfireRock, alt: 'Campfire on rock with jungle backdrop at dusk', category: 'BUSH DINING' as const, label: 'ROCK-TOP CAMPFIRE' },
   { src: kirindaBeach, alt: 'Kirinda beach coastline', category: 'IN THE WILD' as const, label: 'KIRINDA COASTLINE' },
 ];
 
