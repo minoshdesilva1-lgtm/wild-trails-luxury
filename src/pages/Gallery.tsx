@@ -35,6 +35,7 @@ const galleryItems = [
   { src: tentExteriorFront, alt: 'Tent front exterior with deck pool and steps', category: 'THE TENTS' as const, label: 'TENT FRONT VIEW' },
   { src: tentBedroom, alt: 'Luxury tent bedroom with wooden interiors and ambient lighting', category: 'THE TENTS' as const, label: 'TENT BEDROOM' },
   { src: tentNightPool, alt: 'Luxury tent at night with plunge pool and ambient lighting', category: 'THE TENTS' as const, label: 'TENT NIGHT VIEW', objectPosition: 'center 40%' },
+  { src: tentInteriorPoolView, alt: 'Tent interior with bed, wooden floors and pool view through open doors', category: 'THE TENTS' as const, label: 'TENT INTERIOR POOL VIEW' },
   { src: tentBedroomWide, alt: 'Spacious tent bedroom interior with elephant artwork and ambient lighting', category: 'THE TENTS' as const, label: 'TENT SUITE INTERIOR' },
   { src: bushDining1, alt: 'Bush dining under the stars with campfire', category: 'BUSH DINING' as const, label: 'CAMPFIRE DINNER' },
   { src: bushDining2, alt: 'Gourmet meal by firelight with wine', category: 'BUSH DINING' as const, label: 'FIRESIDE CUISINE' },
