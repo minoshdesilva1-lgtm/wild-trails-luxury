@@ -72,7 +72,10 @@ const Footer = () => {
             </div>
 
             {/* Quick Links */}
-            <div>
+            <div
+              ref={col2.ref}
+              className={`transition-all duration-700 delay-150 ${col2.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
               <h4 className="font-display text-xl text-cream mb-6 tracking-wide">
                 Quick Links
               </h4>
