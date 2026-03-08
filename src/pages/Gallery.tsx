@@ -107,7 +107,7 @@ const Gallery = () => {
           <div>
             <div className="flex items-center gap-4 mb-6">
               <span className="w-10 h-px bg-gold" />
-              <span className="label-small">Visual Journey</span>
+              <span className="font-sans-brand text-sm uppercase tracking-[0.2em] text-gold font-semibold">Visual Journey</span>
             </div>
             <h1 className="font-display text-6xl md:text-8xl text-near-black italic mb-8">
               Gallery
