@@ -48,6 +48,8 @@ const galleryItems = [
   { src: bushCampfireNight, alt: 'Campfire burning at night in the wilderness', category: 'BUSH DINING' as const, label: 'WILDERNESS CAMPFIRE' },
   { src: bushCampfireRock, alt: 'Campfire on rock with jungle backdrop at dusk', category: 'BUSH DINING' as const, label: 'ROCK-TOP CAMPFIRE' },
   { src: kirindaBeach, alt: 'Kirinda beach coastline', category: 'IN THE WILD' as const, label: 'KIRINDA COASTLINE' },
+  { src: spottedDeerWaterhole, alt: 'Spotted deer herd drinking at a waterhole in Yala', category: 'IN THE WILD' as const, label: 'SPOTTED DEER AT WATERHOLE' },
+  { src: leopardPortrait, alt: 'Close-up portrait of a Yala leopard', category: 'IN THE WILD' as const, label: 'YALA LEOPARD PORTRAIT' },
 ];
 
 const categories: Category[] = ['THE TENTS', 'SUNDOWNER LOUNGE', 'BUSH DINING', 'IN THE WILD'];
