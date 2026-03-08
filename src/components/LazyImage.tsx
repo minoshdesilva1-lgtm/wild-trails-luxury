@@ -39,7 +39,9 @@ const LazyImage = ({ src, alt, className = '', style }: LazyImageProps) => {
           decoding="async"
           loading="lazy"
           onLoad={() => setLoaded(true)}
+          style={style}
           className={`${className} transition-opacity duration-500 ${loaded ? 'opacity-100' : 'opacity-0'}`}
+        />
         />
       )}
       {(!inView || !loaded) && (
