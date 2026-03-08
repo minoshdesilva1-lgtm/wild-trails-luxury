@@ -80,11 +80,6 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background relative">
       {/* Background image - blended and light */}
-      <div
-        className="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-75"
-        style={{ backgroundImage: `url(${entranceBg})` }}
-      />
-      <div className="fixed inset-0 z-0 bg-gradient-to-b from-background/50 via-background/20 to-background/60" />
       <div className="relative z-10">
       <Navbar />
 
