@@ -1,5 +1,6 @@
-import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const reviews = [
   {
@@ -27,13 +28,14 @@ const reviews = [
 
 const ReviewsSection = () => {
   const [startIndex, setStartIndex] = useState(0);
+  const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section className="section-padding bg-card">
+    <section ref={ref} className="section-padding bg-card">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
           {/* Left - Rating */}
-          <div className="lg:col-span-1">
+          <div className={`lg:col-span-1 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h3 className="font-display font-bold text-3xl text-near-black mb-3">EXCELLENT</h3>
             <div className="flex gap-1 mb-2">
               {[...Array(5)].map((_, i) => (
@@ -51,21 +53,25 @@ const ReviewsSection = () => {
             <div className="flex items-center justify-end gap-2 mb-6">
               <button
                 onClick={() => setStartIndex(Math.max(0, startIndex - 1))}
-                className="w-8 h-8 flex items-center justify-center border border-near-black/20 hover:bg-near-black hover:text-card transition-colors"
+                className="w-8 h-8 flex items-center justify-center border border-near-black/20 hover:bg-near-black hover:text-card hover:scale-110 transition-all duration-300"
               >
                 <ChevronLeft size={16} />
               </button>
               <button
                 onClick={() => setStartIndex(Math.min(reviews.length - 1, startIndex + 1))}
-                className="w-8 h-8 flex items-center justify-center border border-near-black/20 hover:bg-near-black hover:text-card transition-colors"
+                className="w-8 h-8 flex items-center justify-center border border-near-black/20 hover:bg-near-black hover:text-card hover:scale-110 transition-all duration-300"
               >
                 <ChevronRight size={16} />
               </button>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              {reviews.map((r) => (
-                <div key={r.name} className="border border-border p-5 shadow-sm">
+              {reviews.map((r, i) => (
+                <div
+                  key={r.name}
+                  className={`border border-border p-5 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                  style={{ transitionDelay: isVisible ? `${200 + i * 150}ms` : '0ms' }}
+                >
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-3">
                       <div className="w-9 h-9 rounded-full bg-gold/30 flex items-center justify-center font-sans-brand text-[13px] font-semibold text-near-black">
@@ -87,7 +93,7 @@ const ReviewsSection = () => {
                   </div>
                   <h4 className="font-display font-bold text-[16px] text-near-black mb-2">{r.title}</h4>
                   <p className="font-body text-[14px] text-muted-foreground leading-relaxed mb-3">{r.text}</p>
-                  <a href="#" className="font-sans-brand text-[11px] text-muted-foreground hover:text-near-black transition-colors">
+                  <a href="#" className="font-sans-brand text-[11px] text-muted-foreground hover:text-near-black transition-colors story-link">
                     Read more
                   </a>
                 </div>
