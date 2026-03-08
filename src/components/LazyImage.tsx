@@ -4,9 +4,10 @@ interface LazyImageProps {
   src: string;
   alt: string;
   className?: string;
+  style?: React.CSSProperties;
 }
 
-const LazyImage = ({ src, alt, className = '' }: LazyImageProps) => {
+const LazyImage = ({ src, alt, className = '', style }: LazyImageProps) => {
   const [loaded, setLoaded] = useState(false);
   const [inView, setInView] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -38,6 +39,7 @@ const LazyImage = ({ src, alt, className = '' }: LazyImageProps) => {
           decoding="async"
           loading="lazy"
           onLoad={() => setLoaded(true)}
+          style={style}
           className={`${className} transition-opacity duration-500 ${loaded ? 'opacity-100' : 'opacity-0'}`}
         />
       )}
