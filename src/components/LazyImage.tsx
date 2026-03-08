@@ -42,7 +42,6 @@ const LazyImage = ({ src, alt, className = '', style }: LazyImageProps) => {
           style={style}
           className={`${className} transition-opacity duration-500 ${loaded ? 'opacity-100' : 'opacity-0'}`}
         />
-        />
       )}
       {(!inView || !loaded) && (
         <div className="absolute inset-0 bg-muted animate-pulse" />
