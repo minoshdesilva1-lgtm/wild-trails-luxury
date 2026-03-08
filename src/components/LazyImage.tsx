@@ -7,7 +7,7 @@ interface LazyImageProps {
   style?: React.CSSProperties;
 }
 
-const LazyImage = ({ src, alt, className = '' }: LazyImageProps) => {
+const LazyImage = ({ src, alt, className = '', style }: LazyImageProps) => {
   const [loaded, setLoaded] = useState(false);
   const [inView, setInView] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
