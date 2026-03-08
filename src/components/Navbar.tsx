@@ -38,11 +38,13 @@ const Navbar = () => {
         {/* Center Logo */}
         <div className="text-center">
           <img 
-            src={scrolled ? logoDark : logoLight}
+            src={logoDark}
             alt="Wild Trails Yala by Mili" 
-            className={`h-12 md:h-16 w-auto transition-all duration-500 ${
-              scrolled ? 'mix-blend-multiply opacity-95' : 'mix-blend-screen opacity-95'
-            }`}
+            className="h-12 md:h-16 w-auto transition-all duration-500"
+            style={{
+              filter: scrolled ? 'none' : 'brightness(0) invert(1)',
+              mixBlendMode: scrolled ? 'multiply' : 'normal',
+            }}
           />
         </div>
 
