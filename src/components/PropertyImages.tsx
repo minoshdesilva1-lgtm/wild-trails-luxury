@@ -15,8 +15,8 @@ const PropertyImages = () => {
       </div>
       <div className="h-[400px] md:h-[600px] overflow-hidden">
         <img
-          src={tentExterior}
-          alt="Exterior tent deck with private plunge pool"
+          src={room1Pool}
+          alt="Private plunge pool surrounded by lush greenery"
           className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
           loading="lazy"
         />
