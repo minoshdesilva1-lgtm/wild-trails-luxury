@@ -1,4 +1,4 @@
-import heroImg from '@/assets/hero-jungle.jpg';
+import heroImg from '@/assets/room-pool-exterior.jpg';
 import { useEffect, useState } from 'react';
 
 const HeroSection = () => {
