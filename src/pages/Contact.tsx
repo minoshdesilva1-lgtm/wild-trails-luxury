@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingUI from '@/components/FloatingUI';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import entranceBg from '@/assets/wild-trails-entrance.jpg';
 
 const contactCards = [
   {
@@ -77,7 +78,13 @@ const Contact = () => {
   const { ref: mapRef, isVisible: mapVisible } = useScrollReveal({ threshold: 0.1 });
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      {/* Background image - blended and light */}
+      <div
+        className="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-[0.06]"
+        style={{ backgroundImage: `url(${entranceBg})` }}
+      />
+      <div className="relative z-10">
       <Navbar />
 
       {/* Header */}
@@ -202,6 +209,7 @@ const Contact = () => {
 
       <Footer />
       <FloatingUI />
+      </div>
     </div>
   );
 };
