@@ -25,6 +25,8 @@ import tentBedroom from '@/assets/tent-bedroom.jpg';
 import tentNightPool from '@/assets/tent-night-pool.jpg';
 import tentBedroomWide from '@/assets/tent-bedroom-wide.jpg';
 import tentInteriorPoolView from '@/assets/tent-interior-pool-view.jpg';
+import bushCampfireNight from '@/assets/bush-campfire-night.jpg';
+import bushCampfireRock from '@/assets/bush-campfire-rock.jpg';
 
 type Category = 'THE TENTS' | 'SUNDOWNER LOUNGE' | 'BUSH DINING' | 'IN THE WILD';
 
