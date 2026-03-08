@@ -196,7 +196,7 @@ const Contact = () => {
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-14">
           {/* Instagram */}
           <a
-            href="https://www.instagram.com/wildtrailsyala/"
+            href="https://www.instagram.com/wildtrails.yala?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-col items-center gap-4 group"
