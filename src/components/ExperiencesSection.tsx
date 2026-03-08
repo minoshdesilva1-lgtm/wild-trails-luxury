@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import yalaImg from '@/assets/yala-leopard.jpg';
 import kirindaImg from '@/assets/kirinda-beach.jpg';
 import kataragamaImg from '@/assets/kataragama-temple.jpg';
@@ -26,30 +27,47 @@ const ExperiencesSection = () => {
 
   return (
     <section ref={ref} id="experiences" className="section-padding bg-card">
-      <h2 className={`font-display font-bold text-3xl md:text-[44px] text-near-black text-center uppercase tracking-[0.05em] mb-14 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-        Experiences & Excursions
-      </h2>
+      <div className="max-w-7xl mx-auto">
+        <div className={`text-center mb-14 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+          <span className="label-small mb-4 block">Explore the Region</span>
+          <h2 className="font-display font-bold text-3xl md:text-[44px] text-near-black uppercase tracking-[0.05em] mb-4">
+            Experiences & Excursions
+          </h2>
+          <p className="font-body text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+            From thrilling safaris to ancient temples and pristine beaches, discover the wonders surrounding Wild Trails Yala.
+          </p>
+        </div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-        {experiences.map((e, i) => (
-          <div
-            key={e.title}
-            className={`relative h-[400px] overflow-hidden group cursor-pointer transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-            style={{ transitionDelay: isVisible ? `${200 + i * 150}ms` : '0ms' }}
-          >
-            <img
-              src={e.image}
-              alt={e.title}
-              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent group-hover:from-black/80 transition-all duration-500" />
-            <div className="absolute bottom-0 left-0 right-0 p-6 transform group-hover:translate-y-[-8px] transition-transform duration-500">
-              <h3 className="font-display font-bold text-2xl text-card mb-2">{e.title}</h3>
-              <p className="font-body text-sm text-card/80 leading-relaxed group-hover:text-card transition-colors duration-300">{e.description}</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          {experiences.map((e, i) => (
+            <div
+              key={e.title}
+              className={`relative h-[400px] overflow-hidden group cursor-pointer transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+              style={{ transitionDelay: isVisible ? `${200 + i * 150}ms` : '0ms' }}
+            >
+              <img
+                src={e.image}
+                alt={e.title}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent group-hover:from-black/80 transition-all duration-500" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 transform group-hover:translate-y-[-8px] transition-transform duration-500">
+                <h3 className="font-display font-bold text-2xl text-card mb-2">{e.title}</h3>
+                <p className="font-body text-sm text-card/80 leading-relaxed group-hover:text-card transition-colors duration-300">{e.description}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+
+        <div className={`text-center transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+          <Link
+            to="/excursions"
+            className="inline-block font-sans-brand text-[12px] uppercase tracking-[0.15em] px-10 py-4 border-2 border-near-black text-near-black hover:bg-near-black hover:text-card transition-all duration-300"
+          >
+            See More
+          </Link>
+        </div>
       </div>
     </section>
   );
