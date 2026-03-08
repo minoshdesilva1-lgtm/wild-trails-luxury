@@ -89,7 +89,7 @@ const Contact = () => {
       {/* Hero Banner with Image */}
       <section ref={heroImgRef} className="relative w-full h-[50vh] md:h-[60vh] overflow-hidden">
         <img
-          src={heroJungle}
+          src={rockDiningAerial}
           alt="Wild Trails Yala wilderness"
           className="w-full h-full object-cover"
         />
