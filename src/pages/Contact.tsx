@@ -209,6 +209,7 @@ const Contact = () => {
 
       <Footer />
       <FloatingUI />
+      </div>
     </div>
   );
 };
