@@ -30,7 +30,10 @@ const Footer = () => {
       <div className="py-20 md:py-24 px-6 md:px-12 lg:px-20">
         <div className="max-w-7xl mx-auto">
           {/* Small label */}
-          <div className="text-center mb-14">
+          <div
+            ref={labelReveal.ref}
+            className={`text-center mb-14 transition-all duration-700 ${labelReveal.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+          >
             <span className="font-sans-brand text-[11px] tracking-[0.25em] uppercase text-gold">
               — Wild Trails —
             </span>
