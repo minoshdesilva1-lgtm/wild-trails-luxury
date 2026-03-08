@@ -5,8 +5,11 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingUI from '@/components/FloatingUI';
 
-import tentInterior from '@/assets/tent-interior.jpg';
-import tentExterior from '@/assets/tent-exterior.jpg';
+import room1Exterior from '@/assets/room1-exterior.jpg';
+import room1Pool from '@/assets/room1-pool.jpg';
+import room1PoolView from '@/assets/room1-pool-view.jpg';
+import room1Interior from '@/assets/room1-interior.jpg';
+import room1Bedroom from '@/assets/room1-bedroom.jpg';
 import spaLifestyle from '@/assets/spa-lifestyle.jpg';
 import leopardTree from '@/assets/leopard-tree.jpg';
 import yalaLeopard from '@/assets/yala-leopard.jpg';
@@ -17,9 +20,11 @@ import heroJungle from '@/assets/hero-jungle.jpg';
 type Category = 'ALL' | 'THE TENTS' | 'SUNDOWNER LOUNGE' | 'BUSH DINING' | 'IN THE WILD';
 
 const galleryItems = [
-  { src: tentExterior, alt: 'Tent deck with private plunge pool', category: 'THE TENTS' as const, label: 'PRIVATE DECK VIEW' },
-  { src: tentInterior, alt: 'Luxury tent interior', category: 'THE TENTS' as const, label: 'LUXURY TENT INTERIOR' },
-  { src: leopardTree, alt: 'Private plunge pool surrounded by greenery', category: 'THE TENTS' as const, label: 'PRIVATE PLUNGE POOL VIEW' },
+  { src: room1Exterior, alt: 'Tent exterior with wooden deck', category: 'THE TENTS' as const, label: 'PRIVATE DECK VIEW' },
+  { src: room1Interior, alt: 'Luxury tent interior with king bed', category: 'THE TENTS' as const, label: 'LUXURY TENT INTERIOR' },
+  { src: room1Pool, alt: 'Private plunge pool with jungle views', category: 'THE TENTS' as const, label: 'PRIVATE PLUNGE POOL' },
+  { src: room1PoolView, alt: 'Plunge pool through the foliage', category: 'THE TENTS' as const, label: 'POOL GARDEN VIEW' },
+  { src: room1Bedroom, alt: 'Spacious tent bedroom with panoramic windows', category: 'THE TENTS' as const, label: 'PANORAMIC BEDROOM' },
   { src: spaLifestyle, alt: 'Sundowner lounge at dusk', category: 'SUNDOWNER LOUNGE' as const, label: 'SUNDOWNER LOUNGE' },
   { src: heroJungle, alt: 'Bush dining experience', category: 'BUSH DINING' as const, label: 'BUSH DINING SETUP' },
   { src: kirindaBeach, alt: 'Kirinda beach coastline', category: 'IN THE WILD' as const, label: 'KIRINDA COASTLINE' },

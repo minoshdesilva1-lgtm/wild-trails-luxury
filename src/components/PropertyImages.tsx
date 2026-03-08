@@ -1,22 +1,22 @@
 import { Link } from 'react-router-dom';
-import tentInterior from '@/assets/tent-interior.jpg';
-import tentExterior from '@/assets/tent-exterior.jpg';
+import room1Exterior from '@/assets/room1-exterior.jpg';
+import room1Pool from '@/assets/room1-pool.jpg';
 
 const PropertyImages = () => {
   return (
     <section className="relative grid grid-cols-1 md:grid-cols-2 w-full">
       <div className="h-[400px] md:h-[600px] overflow-hidden">
         <img
-          src={tentInterior}
-          alt="Luxury tent interior with king bed and warm lighting"
+          src={room1Exterior}
+          alt="Safari tent exterior with wooden deck and plunge pool"
           className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
           loading="lazy"
         />
       </div>
       <div className="h-[400px] md:h-[600px] overflow-hidden">
         <img
-          src={tentExterior}
-          alt="Exterior tent deck with private plunge pool"
+          src={room1Pool}
+          alt="Private plunge pool surrounded by lush greenery"
           className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
           loading="lazy"
         />
