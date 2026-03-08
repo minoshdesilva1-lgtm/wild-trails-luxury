@@ -16,7 +16,10 @@ import leopardTree from '@/assets/leopard-tree.jpg';
 import yalaLeopard from '@/assets/yala-leopard.jpg';
 import kirindaBeach from '@/assets/kirinda-beach.jpg';
 import kataragamaTemple from '@/assets/kataragama-temple.jpg';
-import heroJungle from '@/assets/hero-jungle.jpg';
+import bushDining1 from '@/assets/bush-dining-1.jpg';
+import bushDining2 from '@/assets/bush-dining-2.jpg';
+import bushDining3 from '@/assets/bush-dining-3.jpg';
+import bushDining4 from '@/assets/bush-dining-4.jpg';
 
 type Category = 'ALL' | 'THE TENTS' | 'SUNDOWNER LOUNGE' | 'BUSH DINING' | 'IN THE WILD';
 
@@ -27,7 +30,10 @@ const galleryItems = [
   { src: room1PoolView, alt: 'Plunge pool through the foliage', category: 'THE TENTS' as const, label: 'POOL GARDEN VIEW' },
   { src: room1Bedroom, alt: 'Spacious tent bedroom with panoramic windows', category: 'THE TENTS' as const, label: 'PANORAMIC BEDROOM' },
   { src: spaLifestyle, alt: 'Sundowner lounge at dusk', category: 'SUNDOWNER LOUNGE' as const, label: 'SUNDOWNER LOUNGE' },
-  { src: heroJungle, alt: 'Bush dining experience', category: 'BUSH DINING' as const, label: 'BUSH DINING SETUP' },
+  { src: bushDining1, alt: 'Bush dining under the stars with campfire', category: 'BUSH DINING' as const, label: 'CAMPFIRE DINNER' },
+  { src: bushDining2, alt: 'Gourmet meal by firelight with wine', category: 'BUSH DINING' as const, label: 'FIRESIDE CUISINE' },
+  { src: bushDining3, alt: 'Lantern-lit jungle dining experience', category: 'BUSH DINING' as const, label: 'JUNGLE LANTERN DINING' },
+  { src: bushDining4, alt: 'Bush dining on rock with campfire at dusk', category: 'BUSH DINING' as const, label: 'ROCK-TOP BUSH DINING' },
   { src: kirindaBeach, alt: 'Kirinda beach coastline', category: 'IN THE WILD' as const, label: 'KIRINDA COASTLINE' },
   { src: yalaLeopard, alt: 'Leopard in Yala National Park', category: 'IN THE WILD' as const, label: 'YALA LEOPARD' },
   { src: kataragamaTemple, alt: 'Kataragama ancient temple', category: 'IN THE WILD' as const, label: 'KATARAGAMA TEMPLE' },
