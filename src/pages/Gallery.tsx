@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { ArrowLeft, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
@@ -62,6 +62,23 @@ const Gallery = () => {
     if (lightboxIndex === null) return;
     setLightboxIndex((lightboxIndex - 1 + filtered.length) % filtered.length);
   }, [lightboxIndex, filtered.length]);
+
+  // Swipe support
+  const touchStart = useRef<{ x: number; y: number } | null>(null);
+
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    touchStart.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+  }, []);
+
+  const handleTouchEnd = useCallback((e: React.TouchEvent) => {
+    if (!touchStart.current) return;
+    const dx = e.changedTouches[0].clientX - touchStart.current.x;
+    const dy = e.changedTouches[0].clientY - touchStart.current.y;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {
+      dx < 0 ? goNext() : goPrev();
+    }
+    touchStart.current = null;
+  }, [goNext, goPrev]);
 
   useEffect(() => {
     if (lightboxIndex === null) return;
@@ -156,6 +173,8 @@ const Gallery = () => {
         <div
           className="fixed inset-0 z-[100] bg-near-black/95 flex items-center justify-center animate-fade-in"
           onClick={closeLightbox}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
         >
           {/* Close */}
           <button
