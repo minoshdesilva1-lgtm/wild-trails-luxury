@@ -5,8 +5,11 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingUI from '@/components/FloatingUI';
 
-import tentInterior from '@/assets/tent-interior.jpg';
-import tentExterior from '@/assets/tent-exterior.jpg';
+import room1Exterior from '@/assets/room1-exterior.jpg';
+import room1Pool from '@/assets/room1-pool.jpg';
+import room1PoolView from '@/assets/room1-pool-view.jpg';
+import room1Interior from '@/assets/room1-interior.jpg';
+import room1Bedroom from '@/assets/room1-bedroom.jpg';
 import spaLifestyle from '@/assets/spa-lifestyle.jpg';
 import leopardTree from '@/assets/leopard-tree.jpg';
 import yalaLeopard from '@/assets/yala-leopard.jpg';
