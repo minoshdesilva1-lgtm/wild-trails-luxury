@@ -1,66 +1,186 @@
+import { useState } from 'react';
 import { Facebook, Instagram, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+const quickLinks = [
+  { label: 'Home', href: '/', isRoute: true },
+  { label: 'About Us', href: '/#welcome', isRoute: false },
+  { label: 'Excursions', href: '/excursions', isRoute: true },
+  { label: 'Rates & Inquiries', href: '/rates', isRoute: true },
+  { label: 'Gallery', href: '/gallery', isRoute: true },
+  { label: 'Contact', href: '/contact', isRoute: true },
+];
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+
   return (
-    <footer id="contact" className="bg-forest text-card/90">
-      <div className="section-padding">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Logo + Social */}
-          <div>
-            <div className="font-logo text-xl text-card tracking-[0.1em] mb-1">WILD TRAILS</div>
-            <div className="font-sans-brand text-[10px] tracking-[0.25em] text-card/60 uppercase mb-6">YALA BY MILI</div>
-            <div className="flex gap-3">
-              {[Facebook, Instagram, MapPin].map((Icon, i) => (
-                <a key={i} href="#" className="w-9 h-9 rounded-full border border-card/30 flex items-center justify-center hover:bg-card/10 hover:border-card/60 hover:scale-110 transition-all duration-300">
-                  <Icon size={16} />
+    <footer id="contact" className="bg-forest text-cream/90">
+      {/* Top decorative divider */}
+      <div className="flex items-center justify-center py-0">
+        <div className="w-full h-px bg-cream/15" />
+      </div>
+
+      <div className="py-20 md:py-24 px-6 md:px-12 lg:px-20">
+        <div className="max-w-7xl mx-auto">
+          {/* Small label */}
+          <div className="text-center mb-14">
+            <span className="font-sans-brand text-[11px] tracking-[0.25em] uppercase text-gold">
+              — Wild Trails —
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-10">
+            {/* Brand Column */}
+            <div>
+              <div className="font-logo text-xl text-cream tracking-[0.1em] mb-1">
+                WILD TRAILS
+              </div>
+              <div className="font-sans-brand text-[10px] tracking-[0.25em] text-cream/50 uppercase mb-5">
+                YALA BY MILI
+              </div>
+              <p className="font-body text-[17px] italic text-cream/70 mb-7">
+                "Where Comfort Meets the Wild"
+              </p>
+              <div className="flex gap-3">
+                {[
+                  { Icon: Facebook, href: '#' },
+                  { Icon: Instagram, href: '#' },
+                  { Icon: MapPin, href: '#' },
+                ].map(({ Icon, href }, i) => (
+                  <a
+                    key={i}
+                    href={href}
+                    className="w-10 h-10 rounded-full border border-cream/25 flex items-center justify-center text-cream/60 hover:text-cream hover:border-cream/60 hover:scale-110 transition-all duration-300"
+                  >
+                    <Icon size={16} />
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="font-display text-xl text-cream mb-6 tracking-wide">
+                Quick Links
+              </h4>
+              <div className="flex flex-col gap-3">
+                {quickLinks.map((link) =>
+                  link.isRoute ? (
+                    <Link
+                      key={link.label}
+                      to={link.href}
+                      className="font-sans-brand text-[12px] uppercase tracking-[0.15em] text-cream/60 hover:text-cream transition-colors duration-300 relative w-fit group"
+                    >
+                      {link.label}
+                      <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-gold group-hover:w-full transition-all duration-300" />
+                    </Link>
+                  ) : (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      className="font-sans-brand text-[12px] uppercase tracking-[0.15em] text-cream/60 hover:text-cream transition-colors duration-300 relative w-fit group"
+                    >
+                      {link.label}
+                      <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-gold group-hover:w-full transition-all duration-300" />
+                    </a>
+                  )
+                )}
+              </div>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <h4 className="font-display text-xl text-cream mb-6 tracking-wide">
+                Contact
+              </h4>
+              <div className="font-body text-[16px] space-y-3 text-cream/60">
+                <p>
+                  Wild Trails Yala by Mili,
+                  <br />
+                  Yoda Kandiya, Sithulpauwa Rd,
+                  <br />
+                  Orukema, Yala, Sri Lanka.
+                </p>
+                <a
+                  href="tel:+94757287077"
+                  className="block hover:text-cream transition-colors duration-300 relative w-fit group"
+                >
+                  (+94) 75 728 7077
+                  <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-gold group-hover:w-full transition-all duration-300" />
                 </a>
-              ))}
+                <a
+                  href="mailto:mili@wildtrailsyala.com"
+                  className="block hover:text-cream transition-colors duration-300 relative w-fit group"
+                >
+                  mili@wildtrailsyala.com
+                  <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-gold group-hover:w-full transition-all duration-300" />
+                </a>
+                <a
+                  href="mailto:minuk@wildtrailsyala.com"
+                  className="block hover:text-cream transition-colors duration-300 relative w-fit group"
+                >
+                  minuk@wildtrailsyala.com
+                  <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-gold group-hover:w-full transition-all duration-300" />
+                </a>
+              </div>
             </div>
-          </div>
 
-          {/* Contact */}
-          <div>
-            <h4 className="font-display text-xl text-card mb-4">Contact</h4>
-            <div className="font-body text-[15px] space-y-2 text-card/70">
-              <p>Wild Trails Yala by Mili,<br />Yoda Kandiya, Sithulpauwa Rd,<br />Orukema, Yala, Sri Lanka.</p>
-              <p className="hover:text-card transition-colors duration-300 cursor-pointer">Call Us: (+94) 75 728 7077</p>
-              <p className="hover:text-card transition-colors duration-300 cursor-pointer">mili@wildtrailsyala.com</p>
-              <p className="hover:text-card transition-colors duration-300 cursor-pointer">minuk@wildtrailsyala.com</p>
-              <p className="hover:text-card transition-colors duration-300 cursor-pointer">www.wildtrailsyalabymili.com</p>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-display text-xl text-card mb-4">Quick Links</h4>
-            <div className="flex flex-col gap-2 font-sans-brand text-[13px] text-card/70">
-              {['Home', 'Our Rooms', 'About Us', 'Offer & Event', 'Contact'].map((link) => (
-                <a key={link} href="#" className="hover:text-card hover:translate-x-1 transition-all duration-300">{link}</a>
-              ))}
-            </div>
-          </div>
-
-          {/* Payment */}
-          <div>
-            <h4 className="font-display text-xl text-card mb-4">Payment methods</h4>
-            <p className="font-body text-[15px] text-card/70 mb-4">
-              Pay any way you choose, no matter whether it's cash or an international payment card, we support all of
-              those payment options.
-            </p>
-            <div className="flex gap-3 font-sans-brand text-[11px] tracking-wider text-card/50 uppercase">
-              {['VISA', 'MC', 'AMEX'].map((card) => (
-                <span key={card} className="border border-card/20 px-3 py-1 hover:border-card/50 hover:text-card/80 transition-all duration-300">{card}</span>
-              ))}
+            {/* Newsletter / CTA */}
+            <div>
+              <h4 className="font-display text-xl text-cream mb-6 tracking-wide">
+                Stay in the Wild
+              </h4>
+              <p className="font-body text-[15px] text-cream/60 mb-5">
+                Subscribe for exclusive offers and safari stories.
+              </p>
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  setEmail('');
+                }}
+                className="flex flex-col gap-3"
+              >
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full bg-transparent border border-cream/25 px-4 py-3 font-sans-brand text-[12px] tracking-wider text-cream placeholder:text-cream/35 focus:outline-none focus:border-gold/60 transition-colors duration-300"
+                />
+                <button
+                  type="submit"
+                  className="w-full border border-gold/60 text-gold font-sans-brand text-[11px] uppercase tracking-[0.15em] px-5 py-3 hover:bg-gold/10 hover:border-gold transition-all duration-300"
+                >
+                  Subscribe
+                </button>
+              </form>
             </div>
           </div>
         </div>
       </div>
 
+      {/* Divider before bottom bar */}
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+        <div className="h-px bg-cream/10" />
+      </div>
+
       {/* Bottom bar */}
-      <div className="bg-footer-bottom py-4 px-6 md:px-12 lg:px-20">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2 font-sans-brand text-[12px] text-muted-foreground">
-          <span>© 2026 Wild Trails Yala by Mili, All Rights Reserved</span>
-          <span className="hover:text-card/80 transition-colors duration-300 cursor-pointer">Terms of Use / Privacy Policy</span>
+      <div className="py-5 px-6 md:px-12 lg:px-20">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-3">
+          <span className="font-sans-brand text-[11px] tracking-wider text-cream/40">
+            © 2026 Wild Trails Yala by Mili. All Rights Reserved.
+          </span>
+          <div className="flex gap-3">
+            {['VISA', 'MC', 'AMEX'].map((card) => (
+              <span
+                key={card}
+                className="font-sans-brand text-[10px] tracking-widest text-cream/40 border border-cream/15 px-3 py-1 hover:border-cream/40 hover:text-cream/60 transition-all duration-300"
+              >
+                {card}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </footer>
