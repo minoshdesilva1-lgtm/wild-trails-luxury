@@ -22,6 +22,7 @@ const reviews = [
     rating: 5,
     title: 'Great. Great.',
     text: 'What a wonderful accommodation and super friendly staff! Beautiful experience to sleep in a tent, also super good at night still be able to stargaze.',
+    avatar: matthijsAvatar as string | undefined,
   },
   {
     name: 'Beatrice V',
