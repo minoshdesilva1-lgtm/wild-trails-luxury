@@ -5,6 +5,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import jasperAvatar from '@/assets/jasper-avatar.jpg';
 import beatriceAvatar from '@/assets/beatrice-avatar.jpg';
+import matthijsAvatar from '@/assets/matthijs-avatar.jpg';
 
 const reviews = [
   {
