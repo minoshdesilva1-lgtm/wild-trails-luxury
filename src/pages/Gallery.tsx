@@ -29,7 +29,7 @@ const galleryItems = [
   { src: room1Pool, alt: 'Private plunge pool with jungle views', category: 'THE TENTS' as const, label: 'PRIVATE PLUNGE POOL' },
   { src: room1PoolView, alt: 'Plunge pool through the foliage', category: 'THE TENTS' as const, label: 'POOL GARDEN VIEW' },
   { src: room1Bedroom, alt: 'Spacious tent bedroom with panoramic windows', category: 'THE TENTS' as const, label: 'PANORAMIC BEDROOM' },
-  { src: spaLifestyle, alt: 'Sundowner lounge at dusk', category: 'SUNDOWNER LOUNGE' as const, label: 'SUNDOWNER LOUNGE' },
+  
   { src: bushDining1, alt: 'Bush dining under the stars with campfire', category: 'BUSH DINING' as const, label: 'CAMPFIRE DINNER' },
   { src: bushDining2, alt: 'Gourmet meal by firelight with wine', category: 'BUSH DINING' as const, label: 'FIRESIDE CUISINE' },
   { src: bushDining3, alt: 'Lantern-lit jungle dining experience', category: 'BUSH DINING' as const, label: 'JUNGLE LANTERN DINING' },
