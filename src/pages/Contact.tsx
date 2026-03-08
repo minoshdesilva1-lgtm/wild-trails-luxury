@@ -1,4 +1,4 @@
-import { ArrowLeft, Car, Phone, Mail } from 'lucide-react';
+import { ArrowLeft, Car, Phone, Mail, Instagram, Facebook } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -182,28 +182,56 @@ const Contact = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-near-black/30 to-transparent" />
       </section>
 
-      {/* Map Embed */}
+      {/* Social Media Section */}
       <section
         ref={mapRef}
         className={`px-6 md:px-12 lg:px-20 max-w-7xl mx-auto py-16 md:py-24 transition-all duration-1000 ease-out ${
           mapVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
-        <div className="text-center mb-10">
-          <h2 className="font-display text-3xl md:text-4xl text-near-black italic mb-3">Find Us</h2>
-          <p className="font-body text-base md:text-lg text-muted-foreground italic">Nestled in the heart of Yala's wilderness</p>
+        <div className="text-center mb-12">
+          <h2 className="font-display text-3xl md:text-4xl text-near-black italic mb-3">Find Us Online</h2>
+          <p className="font-body text-base md:text-lg text-muted-foreground italic">Follow our journey across the wild</p>
         </div>
-        <div className="w-full h-[350px] md:h-[450px] overflow-hidden">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.123!2d81.3784!3d6.3712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMjInMTYuMyJOIDgxwrAyMic0Mi4yIkU!5e0!3m2!1sen!2slk!4v1700000000000"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Wild Trails Yala by Mili location"
-          />
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-14">
+          {/* Instagram */}
+          <a
+            href="https://www.instagram.com/wildtrailsyala/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center gap-4 group"
+          >
+            <div className="w-20 h-20 rounded-full border-2 border-near-black/15 flex items-center justify-center group-hover:border-gold group-hover:scale-110 transition-all duration-300">
+              <Instagram size={36} strokeWidth={1.3} className="text-near-black group-hover:text-gold transition-colors duration-300" />
+            </div>
+            <span className="font-sans-brand text-[12px] uppercase tracking-[0.15em] text-near-black group-hover:text-gold transition-colors duration-300">Instagram</span>
+          </a>
+          {/* Facebook */}
+          <a
+            href="https://www.facebook.com/wildtrailsyala/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center gap-4 group"
+          >
+            <div className="w-20 h-20 rounded-full border-2 border-near-black/15 flex items-center justify-center group-hover:border-gold group-hover:scale-110 transition-all duration-300">
+              <Facebook size={36} strokeWidth={1.3} className="text-near-black group-hover:text-gold transition-colors duration-300" />
+            </div>
+            <span className="font-sans-brand text-[12px] uppercase tracking-[0.15em] text-near-black group-hover:text-gold transition-colors duration-300">Facebook</span>
+          </a>
+          {/* TripAdvisor */}
+          <a
+            href="https://www.tripadvisor.com/Hotel_Review-g644053-d15071583-Reviews-Wild_Trails_Yala_by_Mili-Yala_National_Park_Southern_Province.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center gap-4 group"
+          >
+            <div className="w-20 h-20 rounded-full border-2 border-near-black/15 flex items-center justify-center group-hover:border-gold group-hover:scale-110 transition-all duration-300">
+              <svg viewBox="0 0 24 24" width="36" height="36" className="text-near-black group-hover:text-gold transition-colors duration-300" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2.5 14.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5zm5 0c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5zM12 6c-2.21 0-4.15.95-5.52 2.45l1.77-.02A3.48 3.48 0 0 1 12 7c1.56 0 2.91.82 3.68 2.04l1.84.02C16.15 6.95 14.21 6 12 6zm-2.5 5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zm5 0c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/>
+              </svg>
+            </div>
+            <span className="font-sans-brand text-[12px] uppercase tracking-[0.15em] text-near-black group-hover:text-gold transition-colors duration-300">TripAdvisor</span>
+          </a>
         </div>
       </section>
 
