@@ -14,6 +14,11 @@ const quickLinks = [
 
 const Footer = () => {
   const [email, setEmail] = useState('');
+  const col1 = useScrollReveal({ threshold: 0.1 });
+  const col2 = useScrollReveal({ threshold: 0.1 });
+  const col3 = useScrollReveal({ threshold: 0.1 });
+  const col4 = useScrollReveal({ threshold: 0.1 });
+  const labelReveal = useScrollReveal({ threshold: 0.2 });
 
   return (
     <footer id="contact" className="bg-forest text-cream/90">
