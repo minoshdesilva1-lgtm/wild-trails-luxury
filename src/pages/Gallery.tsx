@@ -173,6 +173,8 @@ const Gallery = () => {
         <div
           className="fixed inset-0 z-[100] bg-near-black/95 flex items-center justify-center animate-fade-in"
           onClick={closeLightbox}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
         >
           {/* Close */}
           <button
