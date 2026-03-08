@@ -23,7 +23,7 @@ const Index = () => {
       <FacilitiesSection />
       <RoomCarousel />
       <FeaturesRow />
-      <LuxuryComfort />
+      
       <ExperiencesSection />
       <ReviewsSection />
       <Footer />
