@@ -41,7 +41,10 @@ const Footer = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-10">
             {/* Brand Column */}
-            <div>
+            <div
+              ref={col1.ref}
+              className={`transition-all duration-700 ${col1.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
               <div className="font-logo text-xl text-cream tracking-[0.1em] mb-1">
                 WILD TRAILS
               </div>
