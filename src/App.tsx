@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
 const Gallery = lazy(() => import("./pages/Gallery"));
+const RatesInquiries = lazy(() => import("./pages/RatesInquiries"));
 
 const queryClient = new QueryClient();
 
