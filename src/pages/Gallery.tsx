@@ -27,6 +27,8 @@ import tentBedroomWide from '@/assets/tent-bedroom-wide.jpg';
 import tentInteriorPoolView from '@/assets/tent-interior-pool-view.jpg';
 import bushCampfireNight from '@/assets/bush-campfire-night.jpg';
 import bushCampfireRock from '@/assets/bush-campfire-rock.jpg';
+import spottedDeerWaterhole from '@/assets/spotted-deer-waterhole.jpg';
+import leopardPortrait from '@/assets/leopard-portrait.jpg';
 
 type Category = 'THE TENTS' | 'SUNDOWNER LOUNGE' | 'BUSH DINING' | 'IN THE WILD';
 
@@ -46,6 +48,8 @@ const galleryItems = [
   { src: bushCampfireNight, alt: 'Campfire burning at night in the wilderness', category: 'BUSH DINING' as const, label: 'WILDERNESS CAMPFIRE' },
   { src: bushCampfireRock, alt: 'Campfire on rock with jungle backdrop at dusk', category: 'BUSH DINING' as const, label: 'ROCK-TOP CAMPFIRE' },
   { src: kirindaBeach, alt: 'Kirinda beach coastline', category: 'IN THE WILD' as const, label: 'KIRINDA COASTLINE' },
+  { src: spottedDeerWaterhole, alt: 'Spotted deer herd drinking at a waterhole in Yala', category: 'IN THE WILD' as const, label: 'SPOTTED DEER AT WATERHOLE' },
+  { src: leopardPortrait, alt: 'Close-up portrait of a Yala leopard', category: 'IN THE WILD' as const, label: 'YALA LEOPARD PORTRAIT' },
 ];
 
 const categories: Category[] = ['THE TENTS', 'SUNDOWNER LOUNGE', 'BUSH DINING', 'IN THE WILD'];
