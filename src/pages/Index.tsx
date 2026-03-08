@@ -7,8 +7,7 @@ import FacilitiesSection from '@/components/FacilitiesSection';
 import RoomCarousel from '@/components/RoomCarousel';
 import FeaturesRow from '@/components/FeaturesRow';
 import LuxuryComfort from '@/components/LuxuryComfort';
-import SpaSection from '@/components/SpaSection';
-
+import ExperiencesSection from '@/components/ExperiencesSection';
 import ReviewsSection from '@/components/ReviewsSection';
 import Footer from '@/components/Footer';
 import FloatingUI from '@/components/FloatingUI';
@@ -25,8 +24,7 @@ const Index = () => {
       <RoomCarousel />
       <FeaturesRow />
       <LuxuryComfort />
-      <SpaSection />
-      
+      <ExperiencesSection />
       <ReviewsSection />
       <Footer />
       <FloatingUI />
