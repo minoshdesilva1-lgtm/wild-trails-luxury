@@ -3,6 +3,7 @@ import { useState, useCallback } from 'react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import useEmblaCarousel from 'embla-carousel-react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import jasperAvatar from '@/assets/jasper-avatar.jpg';
 
 const reviews = [
   {
@@ -11,6 +12,7 @@ const reviews = [
     rating: 5,
     title: 'Lovely',
     text: 'The place was absolutely wonderful! The staff were incredibly polite, friendly, and welcoming. After an amazing safari adventure, we relaxed at a beautiful campsite. Truly a fantastic experience!',
+    avatar: jasperAvatar as string | undefined,
   },
   {
     name: 'Matthijs V',
@@ -144,15 +146,23 @@ const ReviewsSection = () => {
 
                     {/* Avatar + Name + Date */}
                     <div className="flex items-center gap-4 mb-5 relative z-10">
-                      <div
-                        className="w-11 h-11 rounded-full flex items-center justify-center font-sans-brand text-sm font-semibold shrink-0"
-                        style={{
-                          background: 'hsl(var(--forest))',
-                          color: 'hsl(var(--cream))',
-                        }}
-                      >
-                        {r.name[0]}
-                      </div>
+                      {r.avatar ? (
+                        <img
+                          src={r.avatar}
+                          alt={r.name}
+                          className="w-11 h-11 rounded-full object-cover shrink-0"
+                        />
+                      ) : (
+                        <div
+                          className="w-11 h-11 rounded-full flex items-center justify-center font-sans-brand text-sm font-semibold shrink-0"
+                          style={{
+                            background: 'hsl(var(--forest))',
+                            color: 'hsl(var(--cream))',
+                          }}
+                        >
+                          {r.name[0]}
+                        </div>
+                      )}
                       <div>
                         <p className="font-display font-bold text-[15px]" style={{ color: 'hsl(var(--near-black))' }}>
                           {r.name}
