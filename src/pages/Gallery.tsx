@@ -36,9 +36,9 @@ const galleryItems = [
 const categories: Category[] = ['THE TENTS', 'SUNDOWNER LOUNGE', 'BUSH DINING', 'IN THE WILD'];
 
 const Gallery = () => {
-  const [active, setActive] = useState<Category>('ALL');
+  const [active, setActive] = useState<Category>('THE TENTS');
 
-  const filtered = active === 'ALL' ? galleryItems : galleryItems.filter(i => i.category === active);
+  const filtered = galleryItems.filter(i => i.category === active);
 
   return (
     <div className="min-h-screen bg-background">
