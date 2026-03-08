@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, Phone, Globe, ChevronDown, X } from 'lucide-react';
-import logoDark from '@/assets/wild-trails-logo-dark.png';
-import logoLight from '@/assets/wild-trails-logo-light.png';
+import logo from '@/assets/wild-trails-logo-clean.png';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -39,11 +38,12 @@ const Navbar = () => {
         {/* Center Logo */}
         <div className="text-center">
           <img 
-            src={scrolled ? logoDark : logoLight}
+            src={logo}
             alt="Wild Trails Yala by Mili" 
-            className={`h-12 md:h-16 w-auto transition-all duration-500 ${
-              scrolled ? 'mix-blend-multiply opacity-95' : 'mix-blend-screen opacity-95'
-            }`}
+            className="h-12 md:h-16 w-auto transition-all duration-500"
+            style={{
+              filter: scrolled ? 'none' : 'brightness(0) invert(1)',
+            }}
           />
         </div>
 
