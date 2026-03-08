@@ -145,7 +145,10 @@ const Footer = () => {
             </div>
 
             {/* Newsletter / CTA */}
-            <div>
+            <div
+              ref={col4.ref}
+              className={`transition-all duration-700 delay-[450ms] ${col4.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
               <h4 className="font-display text-xl text-cream mb-6 tracking-wide">
                 Stay in the Wild
               </h4>
