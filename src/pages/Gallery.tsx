@@ -103,11 +103,10 @@ const Gallery = () => {
               key={`${item.alt}-${i}`}
               className="relative h-[350px] md:h-[420px] overflow-hidden group cursor-pointer"
             >
-              <img
+              <LazyImage
                 src={item.src}
                 alt={item.alt}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                loading="lazy"
               />
               <div className="absolute inset-0 bg-near-black/0 group-hover:bg-near-black/40 transition-colors duration-500 flex items-center justify-center">
                 <span className="font-sans-brand text-[12px] uppercase tracking-[0.2em] text-card opacity-0 group-hover:opacity-100 transition-opacity duration-500">
