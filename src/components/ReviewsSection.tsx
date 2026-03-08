@@ -3,6 +3,7 @@ import { useState, useCallback } from 'react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import useEmblaCarousel from 'embla-carousel-react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import jasperAvatar from '@/assets/jasper-avatar.jpg';
 
 const reviews = [
   {
