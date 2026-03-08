@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingUI from '@/components/FloatingUI';
+import LazyImage from '@/components/LazyImage';
 
 import room1Exterior from '@/assets/room1-exterior.jpg';
 import room1Pool from '@/assets/room1-pool.jpg';
