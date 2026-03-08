@@ -4,6 +4,7 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 import useEmblaCarousel from 'embla-carousel-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import jasperAvatar from '@/assets/jasper-avatar.jpg';
+import beatriceAvatar from '@/assets/beatrice-avatar.jpg';
 
 const reviews = [
   {
@@ -27,6 +28,7 @@ const reviews = [
     rating: 5,
     title: 'Such an amazing experience!',
     text: 'It was amazing! Such a lovely place and lovely people :) location is amazing and the food was good. The tent has everything you need.',
+    avatar: beatriceAvatar as string | undefined,
   },
   {
     name: 'Sander B',
