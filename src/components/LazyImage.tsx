@@ -4,6 +4,7 @@ interface LazyImageProps {
   src: string;
   alt: string;
   className?: string;
+  style?: React.CSSProperties;
 }
 
 const LazyImage = ({ src, alt, className = '' }: LazyImageProps) => {
