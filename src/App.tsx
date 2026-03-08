@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound";
 const Gallery = lazy(() => import("./pages/Gallery"));
 const RatesInquiries = lazy(() => import("./pages/RatesInquiries"));
 const Excursions = lazy(() => import("./pages/Excursions"));
+const Contact = lazy(() => import("./pages/Contact"));
 
 const queryClient = new QueryClient();
 
