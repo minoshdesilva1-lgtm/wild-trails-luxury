@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import tentInterior from '@/assets/tent-interior.jpg';
-import tentExterior from '@/assets/tent-exterior.jpg';
+import room1Exterior from '@/assets/room1-exterior.jpg';
+import room1Pool from '@/assets/room1-pool.jpg';
 
 const PropertyImages = () => {
   return (
