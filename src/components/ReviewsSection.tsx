@@ -6,6 +6,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import jasperAvatar from '@/assets/jasper-avatar.jpg';
 import beatriceAvatar from '@/assets/beatrice-avatar.jpg';
 import matthijsAvatar from '@/assets/matthijs-avatar.jpg';
+import alexandraAvatar from '@/assets/alexandra-avatar.jpg';
 
 const reviews = [
   {
@@ -23,6 +24,14 @@ const reviews = [
     title: 'Great. Great.',
     text: 'What a wonderful accommodation and super friendly staff! Beautiful experience to sleep in a tent, also super good at night still be able to stargaze.',
     avatar: matthijsAvatar as string | undefined,
+  },
+  {
+    name: 'Αλεξανδρα Μ',
+    date: 'December 2024',
+    rating: 5,
+    title: 'Safari in Sri Lanka!!!',
+    text: 'Our stay at this particular accommodation was a very beautiful experience !!!! Beautifully cared for rooms, delicious food with huge servings and terribly polite and welcoming staff!!! I definitely recommend it!! If you visit the safari you definitely choose it for an unforgettable stay!!!',
+    avatar: alexandraAvatar as string | undefined,
   },
   {
     name: 'Beatrice V',
