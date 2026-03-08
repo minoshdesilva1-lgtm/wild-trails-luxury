@@ -23,6 +23,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/gallery" element={<Suspense fallback={<div className="min-h-screen bg-background" />}><Gallery /></Suspense>} />
           <Route path="/rates" element={<Suspense fallback={<div className="min-h-screen bg-background" />}><RatesInquiries /></Suspense>} />
+          <Route path="/excursions" element={<Suspense fallback={<div className="min-h-screen bg-background" />}><Excursions /></Suspense>} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -26,7 +26,7 @@ const Index = () => {
       <FeaturesRow />
       <LuxuryComfort />
       <SpaSection />
-      <ExperiencesSection />
+      
       <ReviewsSection />
       <Footer />
       <FloatingUI />
