@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
 const Gallery = lazy(() => import("./pages/Gallery"));
+const RatesInquiries = lazy(() => import("./pages/RatesInquiries"));
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/gallery" element={<Suspense fallback={<div className="min-h-screen bg-background" />}><Gallery /></Suspense>} />
+          <Route path="/rates" element={<Suspense fallback={<div className="min-h-screen bg-background" />}><RatesInquiries /></Suspense>} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
