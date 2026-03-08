@@ -12,6 +12,7 @@ const reviews = [
     rating: 5,
     title: 'Lovely',
     text: 'The place was absolutely wonderful! The staff were incredibly polite, friendly, and welcoming. After an amazing safari adventure, we relaxed at a beautiful campsite. Truly a fantastic experience!',
+    avatar: jasperAvatar as string | undefined,
   },
   {
     name: 'Matthijs V',
