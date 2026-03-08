@@ -7,7 +7,7 @@ const navLinks = [
   { label: 'HOME', href: '/', isRoute: true },
   { label: 'ABOUT US', href: '#welcome', isRoute: false },
   { label: 'EXCURSIONS', href: '#experiences', isRoute: false },
-  { label: 'RATES & INQUIRIES', href: '#rooms', isRoute: false },
+  { label: 'RATES & INQUIRIES', href: '/rates', isRoute: true },
   { label: 'GALLERY', href: '/gallery', isRoute: true },
   { label: 'CONTACT', href: '#contact', isRoute: false },
 ];
