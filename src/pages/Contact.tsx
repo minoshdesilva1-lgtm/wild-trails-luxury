@@ -228,7 +228,7 @@ const Contact = () => {
             bespoke safari experience — we're here to help.
           </p>
           <a
-            href="https://wa.me/94757287077"
+            href="https://wa.me/94757287077?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20Wild%20Trails%20Yala%20by%20Mili."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block font-sans-brand text-[12px] uppercase tracking-[0.15em] px-8 py-3.5 bg-gold/80 text-white hover:bg-gold transition-all duration-300"
