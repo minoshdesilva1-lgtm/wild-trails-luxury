@@ -33,7 +33,7 @@ const galleryItems = [
   { src: kirindaBeach, alt: 'Kirinda beach coastline', category: 'IN THE WILD' as const, label: 'KIRINDA COASTLINE' },
 ];
 
-const categories: Category[] = ['ALL', 'THE TENTS', 'SUNDOWNER LOUNGE', 'BUSH DINING', 'IN THE WILD'];
+const categories: Category[] = ['THE TENTS', 'SUNDOWNER LOUNGE', 'BUSH DINING', 'IN THE WILD'];
 
 const Gallery = () => {
   const [active, setActive] = useState<Category>('ALL');
