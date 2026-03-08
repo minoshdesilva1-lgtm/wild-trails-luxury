@@ -9,7 +9,7 @@ const navLinks = [
   { label: 'EXCURSIONS', href: '/excursions', isRoute: true },
   { label: 'RATES & INQUIRIES', href: '/rates', isRoute: true },
   { label: 'GALLERY', href: '/gallery', isRoute: true },
-  { label: 'CONTACT', href: '#contact', isRoute: false },
+  { label: 'CONTACT', href: '/contact', isRoute: true },
 ];
 
 const Navbar = () => {
