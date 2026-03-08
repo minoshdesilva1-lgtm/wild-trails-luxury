@@ -94,16 +94,12 @@ const Navbar = () => {
 
         {/* Right - CTA + Hamburger */}
         <div className="flex items-center gap-3">
-          <a
-            href="#contact"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick('#contact', false);
-            }}
+          <Link
+            to="/contact"
             className="hidden sm:inline-block font-sans-brand text-[11px] uppercase tracking-[0.12em] px-5 py-2.5 bg-gold/80 text-near-black hover:bg-gold transition-all duration-300"
           >
             INQUIRE NOW
-          </a>
+          </Link>
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className={`lg:hidden w-10 h-10 flex items-center justify-center border transition-all duration-300 ${
