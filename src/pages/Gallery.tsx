@@ -35,8 +35,6 @@ const galleryItems = [
   { src: bushDining3, alt: 'Lantern-lit jungle dining experience', category: 'BUSH DINING' as const, label: 'JUNGLE LANTERN DINING' },
   { src: bushDining4, alt: 'Bush dining on rock with campfire at dusk', category: 'BUSH DINING' as const, label: 'ROCK-TOP BUSH DINING' },
   { src: kirindaBeach, alt: 'Kirinda beach coastline', category: 'IN THE WILD' as const, label: 'KIRINDA COASTLINE' },
-  { src: yalaLeopard, alt: 'Leopard in Yala National Park', category: 'IN THE WILD' as const, label: 'YALA LEOPARD' },
-  { src: kataragamaTemple, alt: 'Kataragama ancient temple', category: 'IN THE WILD' as const, label: 'KATARAGAMA TEMPLE' },
 ];
 
 const categories: Category[] = ['ALL', 'THE TENTS', 'SUNDOWNER LOUNGE', 'BUSH DINING', 'IN THE WILD'];
