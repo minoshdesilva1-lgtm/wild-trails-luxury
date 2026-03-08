@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingUI from '@/components/FloatingUI';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import entranceBg from '@/assets/wild-trails-entrance.jpg';
 
 const contactCards = [
   {
