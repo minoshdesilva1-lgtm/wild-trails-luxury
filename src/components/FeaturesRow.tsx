@@ -1,4 +1,5 @@
 import { Building, Shield, DoorOpen, RefreshCw } from 'lucide-react';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const features = [
   {
@@ -24,13 +25,23 @@ const features = [
 ];
 
 const FeaturesRow = () => {
+  const { ref, isVisible } = useScrollReveal();
+
   return (
-    <section className="section-padding bg-card">
+    <section ref={ref} className="section-padding bg-card">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-        {features.map((f) => (
-          <div key={f.title} className="text-center">
-            <f.icon size={56} strokeWidth={1} className="mx-auto mb-5 text-near-black" />
-            <h4 className="font-display text-xl text-near-black mb-2">{f.title}</h4>
+        {features.map((f, i) => (
+          <div
+            key={f.title}
+            className={`text-center group cursor-default transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            style={{ transitionDelay: isVisible ? `${i * 150}ms` : '0ms' }}
+          >
+            <f.icon
+              size={56}
+              strokeWidth={1}
+              className="mx-auto mb-5 text-near-black group-hover:text-gold group-hover:scale-110 transition-all duration-500"
+            />
+            <h4 className="font-display text-xl text-near-black mb-2 group-hover:text-gold transition-colors duration-300">{f.title}</h4>
             <p className="font-body text-[15px] text-muted-foreground leading-relaxed">{f.text}</p>
           </div>
         ))}
