@@ -146,15 +146,23 @@ const ReviewsSection = () => {
 
                     {/* Avatar + Name + Date */}
                     <div className="flex items-center gap-4 mb-5 relative z-10">
-                      <div
-                        className="w-11 h-11 rounded-full flex items-center justify-center font-sans-brand text-sm font-semibold shrink-0"
-                        style={{
-                          background: 'hsl(var(--forest))',
-                          color: 'hsl(var(--cream))',
-                        }}
-                      >
-                        {r.name[0]}
-                      </div>
+                      {r.avatar ? (
+                        <img
+                          src={r.avatar}
+                          alt={r.name}
+                          className="w-11 h-11 rounded-full object-cover shrink-0"
+                        />
+                      ) : (
+                        <div
+                          className="w-11 h-11 rounded-full flex items-center justify-center font-sans-brand text-sm font-semibold shrink-0"
+                          style={{
+                            background: 'hsl(var(--forest))',
+                            color: 'hsl(var(--cream))',
+                          }}
+                        >
+                          {r.name[0]}
+                        </div>
+                      )}
                       <div>
                         <p className="font-display font-bold text-[15px]" style={{ color: 'hsl(var(--near-black))' }}>
                           {r.name}
