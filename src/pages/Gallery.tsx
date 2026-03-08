@@ -17,7 +17,7 @@ import bushDining2 from '@/assets/bush-dining-2.jpg';
 import bushDining3 from '@/assets/bush-dining-3.jpg';
 import bushDining4 from '@/assets/bush-dining-4.jpg';
 
-type Category = 'ALL' | 'THE TENTS' | 'SUNDOWNER LOUNGE' | 'BUSH DINING' | 'IN THE WILD';
+type Category = 'THE TENTS' | 'SUNDOWNER LOUNGE' | 'BUSH DINING' | 'IN THE WILD';
 
 const galleryItems = [
   { src: room1Exterior, alt: 'Tent exterior with wooden deck', category: 'THE TENTS' as const, label: 'PRIVATE DECK VIEW' },
@@ -33,12 +33,12 @@ const galleryItems = [
   { src: kirindaBeach, alt: 'Kirinda beach coastline', category: 'IN THE WILD' as const, label: 'KIRINDA COASTLINE' },
 ];
 
-const categories: Category[] = ['ALL', 'THE TENTS', 'SUNDOWNER LOUNGE', 'BUSH DINING', 'IN THE WILD'];
+const categories: Category[] = ['THE TENTS', 'SUNDOWNER LOUNGE', 'BUSH DINING', 'IN THE WILD'];
 
 const Gallery = () => {
-  const [active, setActive] = useState<Category>('ALL');
+  const [active, setActive] = useState<Category>('THE TENTS');
 
-  const filtered = active === 'ALL' ? galleryItems : galleryItems.filter(i => i.category === active);
+  const filtered = galleryItems.filter(i => i.category === active);
 
   return (
     <div className="min-h-screen bg-background">
