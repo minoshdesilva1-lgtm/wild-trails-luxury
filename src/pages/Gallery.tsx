@@ -17,7 +17,7 @@ import bushDining2 from '@/assets/bush-dining-2.jpg';
 import bushDining3 from '@/assets/bush-dining-3.jpg';
 import bushDining4 from '@/assets/bush-dining-4.jpg';
 
-type Category = 'ALL' | 'THE TENTS' | 'SUNDOWNER LOUNGE' | 'BUSH DINING' | 'IN THE WILD';
+type Category = 'THE TENTS' | 'SUNDOWNER LOUNGE' | 'BUSH DINING' | 'IN THE WILD';
 
 const galleryItems = [
   { src: room1Exterior, alt: 'Tent exterior with wooden deck', category: 'THE TENTS' as const, label: 'PRIVATE DECK VIEW' },
