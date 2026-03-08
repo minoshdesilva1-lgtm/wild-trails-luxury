@@ -22,6 +22,7 @@ import tentPoolWide from '@/assets/tent-pool-wide.jpg';
 import tentInteriorWide from '@/assets/tent-interior-wide.jpg';
 import tentExteriorFront from '@/assets/tent-exterior-front.jpg';
 import tentBedroom from '@/assets/tent-bedroom.jpg';
+import tentNightPool from '@/assets/tent-night-pool.jpg';
 
 type Category = 'THE TENTS' | 'SUNDOWNER LOUNGE' | 'BUSH DINING' | 'IN THE WILD';
 
@@ -31,6 +32,7 @@ const galleryItems = [
   { src: tentInteriorWide, alt: 'Spacious luxury tent interior with panoramic jungle views', category: 'THE TENTS' as const, label: 'LUXURY TENT INTERIOR' },
   { src: tentExteriorFront, alt: 'Tent front exterior with deck pool and steps', category: 'THE TENTS' as const, label: 'TENT FRONT VIEW' },
   { src: tentBedroom, alt: 'Luxury tent bedroom with wooden interiors and ambient lighting', category: 'THE TENTS' as const, label: 'TENT BEDROOM' },
+  { src: tentNightPool, alt: 'Luxury tent at night with plunge pool and ambient lighting', category: 'THE TENTS' as const, label: 'TENT NIGHT VIEW', objectPosition: 'center 40%' },
   { src: bushDining1, alt: 'Bush dining under the stars with campfire', category: 'BUSH DINING' as const, label: 'CAMPFIRE DINNER' },
   { src: bushDining2, alt: 'Gourmet meal by firelight with wine', category: 'BUSH DINING' as const, label: 'FIRESIDE CUISINE' },
   { src: bushDining3, alt: 'Lantern-lit jungle dining experience', category: 'BUSH DINING' as const, label: 'JUNGLE LANTERN DINING' },
