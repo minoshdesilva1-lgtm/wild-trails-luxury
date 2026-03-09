@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import logo from '@/assets/wild-trails-logo-clean.png';
+import logo from '@/assets/wild-trails-logo-white-bg.png';
 
 const navLinks = [
   { label: 'HOME', href: '/', isRoute: true },
@@ -40,15 +40,15 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      scrolled ? 'bg-card/95 backdrop-blur-sm shadow-md' : 'bg-black/20 backdrop-blur-[2px]'
+      scrolled ? 'bg-white shadow-md' : 'bg-black/20 backdrop-blur-[2px]'
     }`}>
-      <div className="flex items-center justify-between px-4 md:px-8 py-3 max-w-[1400px] mx-auto">
+      <div className="flex items-center justify-between pl-5 md:pl-8 pr-4 md:pr-8 py-2 max-w-[1400px] mx-auto">
         {/* Left - Logo */}
         <Link to="/" className="flex-shrink-0">
           <img
             src={logo}
             alt="Wild Trails Yala by Mili"
-            className="h-11 md:h-14 w-auto transition-all duration-500"
+            className="h-[50px] md:h-[70px] w-auto transition-all duration-500"
             style={{
               filter: scrolled ? 'none' : 'brightness(0) invert(1)',
             }}
