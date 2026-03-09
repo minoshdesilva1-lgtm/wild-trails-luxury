@@ -128,7 +128,7 @@ const RatesInquiries = () => {
           <div>
             <div className={`flex items-center gap-4 mb-6 transition-all duration-700 ${headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               <span className="w-10 h-px bg-gold" />
-              <span className="label-small">Packages & Pricing</span>
+              <span className="font-sans-brand text-sm uppercase tracking-[0.2em] text-gold font-semibold">Packages & Pricing</span>
             </div>
 
             <h1
