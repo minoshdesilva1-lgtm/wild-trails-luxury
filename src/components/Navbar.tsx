@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import logo from '@/assets/wild-trails-logo-clean.png';
+import logo from '@/assets/wild-trails-logo-white-bg.png';
 
 const navLinks = [
   { label: 'HOME', href: '/', isRoute: true },
