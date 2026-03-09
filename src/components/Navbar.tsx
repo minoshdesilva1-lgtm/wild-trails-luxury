@@ -48,7 +48,7 @@ const Navbar = () => {
           <img
             src={logo}
             alt="Wild Trails Yala by Mili"
-            className="h-[50px] md:h-[70px] w-auto transition-all duration-500"
+            className="h-[60px] md:h-[85px] w-auto transition-all duration-500"
             style={{
               filter: scrolled ? 'none' : 'brightness(0) invert(1)',
             }}
