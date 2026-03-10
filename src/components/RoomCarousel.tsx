@@ -38,6 +38,9 @@ const RoomCarousel = () => {
             <img
               src={room.image}
               alt={room.type}
+              width={840}
+              height={560}
+              decoding="async"
               className="w-full h-full object-cover transition-all duration-500"
               loading="lazy"
             />
