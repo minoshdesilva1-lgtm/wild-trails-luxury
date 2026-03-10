@@ -12,6 +12,9 @@ const PropertyImages = () => {
         <img
           src={room1Exterior}
           alt="Safari tent exterior with wooden deck and plunge pool"
+          width={900}
+          height={600}
+          decoding="async"
           className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
           loading="lazy"
         />
