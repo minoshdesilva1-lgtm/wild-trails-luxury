@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import FloatingUI from '@/components/FloatingUI';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import entranceImg from '@/assets/wild-trails-entrance.jpg';
-import tentExterior from '@/assets/tent-exterior.jpg';
+import tentInteriorBedroom from '@/assets/tent-interior-bedroom.jpg';
 import bushDining1 from '@/assets/bush-dining-1.jpg';
 import rockDiningAerial from '@/assets/rock-dining-aerial.jpg';
 
@@ -175,7 +175,7 @@ const Contact = () => {
       {/* Full-width Image Divider */}
       <section className="w-full h-[300px] md:h-[400px] overflow-hidden relative">
         <img
-          src={tentExterior}
+          src={tentInteriorBedroom}
           alt="Wild Trails tent exterior"
           className="w-full h-full object-cover"
         />
