@@ -11,9 +11,14 @@ const HeroSection = () => {
 
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      <div
-        className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-[2000ms] ease-out ${loaded ? 'scale-100' : 'scale-110'}`}
-        style={{ backgroundImage: `url(${heroImg})` }}
+      <img
+        src={heroImg}
+        alt="Wild Trails Yala luxury safari camp with pool"
+        width={1920}
+        height={1080}
+        decoding="async"
+        fetchPriority="high"
+        className={`absolute inset-0 w-full h-full object-cover transition-transform duration-[2000ms] ease-out ${loaded ? 'scale-100' : 'scale-110'}`}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
