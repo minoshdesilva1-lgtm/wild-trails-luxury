@@ -175,7 +175,7 @@ const Contact = () => {
       {/* Full-width Image Divider */}
       <section className="w-full h-[300px] md:h-[400px] overflow-hidden relative">
         <img
-          src={tentExterior}
+          src={tentInteriorBedroom}
           alt="Wild Trails tent exterior"
           className="w-full h-full object-cover"
         />
