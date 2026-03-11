@@ -46,12 +46,14 @@ const Footer = () => {
               ref={col1.ref}
               className={`transition-all duration-700 ${col1.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             >
-              <div className="font-logo text-xl text-cream tracking-[0.1em] mb-1">
-                WILD TRAILS
-              </div>
-              <div className="font-sans-brand text-[10px] tracking-[0.25em] text-cream/50 uppercase mb-5">
-                YALA BY MILI
-              </div>
+              <img
+                src={footerLogo}
+                alt="Wild Trails Yala by Mili"
+                className="h-16 w-auto mb-5"
+                style={{ filter: 'brightness(0) invert(1)' }}
+                decoding="async"
+                loading="lazy"
+              />
               <p className="font-body text-[17px] italic text-cream/70 mb-7">
                 "Where Comfort Meets the Wild"
               </p>
