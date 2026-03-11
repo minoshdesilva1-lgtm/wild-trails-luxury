@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Facebook, Instagram, MapPin } from 'lucide-react';
+import footerLogo from '@/assets/wild-trails-logo-footer.png';
 import { Link } from 'react-router-dom';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
